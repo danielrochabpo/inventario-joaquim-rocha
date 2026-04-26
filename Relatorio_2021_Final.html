@@ -330,9 +330,10 @@
                         <p class="text-3xl font-bold font-display text-accent-crimson">- R$ 55.3K</p>
                     </div>
                     <div
-                        class="glass-card p-6 border-white/10 col-span-2 text-center bg-accent-blue/10 border-accent-blue/30">
-                        <p class="text-accent-blue text-xs font-semibold uppercase mb-1">Saldo do Exercício (2021)</p>
-                        <p class="text-4xl font-bold font-display text-white">+ R$ 30.333,19</p>
+                        class="glass-card p-6 border-white/10 col-span-2 text-center bg-accent-crimson/10 border-accent-crimson/30">
+                        <p class="text-accent-crimson text-xs font-semibold uppercase mb-1">Rombo Patrimonial — Primeiras Declarações (2021)</p>
+                        <p class="text-4xl font-bold font-display text-white">- R$ 9.870.824,50</p>
+                        <p class="text-slate-400 text-xs mt-2">Bens: R$ 3.631.354,73 · Dívidas: R$ 13.502.179,23</p>
                     </div>
                 </div>
             </div>
@@ -354,21 +355,35 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="border-b border-slate-700 text-slate-400 uppercase tracking-wider text-xs">
-                                <th class="p-3">Categoria</th>
-                                <th class="p-3">Descrição Resumida</th>
-                                <th class="p-3 text-right">Créditos (R$)</th>
+                                <th class="p-3">Origem</th>
+                                <th class="p-3">Descrição</th>
+                                <th class="p-3 text-right">Valor (R$)</th>
+                                <th class="p-3">Situação</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-800">
-                            <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-emerald">
-                                <td class="p-3 font-medium text-white">Venda de Safra e Arrendamento</td>
-                                <td class="p-3 text-slate-400">Recebimentos: Aliança Agrícola do Cerrado S.A. e Marco
-                                    Antonio Senju</td>
+                            <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-emerald">
+                                <td class="p-3 font-medium text-white">Arrendamento Agrícola</td>
+                                <td class="p-3 text-slate-400">Aliança Agrícola do Cerrado S.A. e Marco Antonio Senju — receita operacional disponível</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">85.632,17</td>
+                                <td class="p-3"><span class="status-pill bg-emerald-500/20 text-emerald-400">Recebido</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition border-l-4 border-slate-500">
+                                <td class="p-3 font-medium text-white">Venda — 44ha Faz. Curralinho</td>
+                                <td class="p-3 text-slate-400">Compradores Antônio Machado e Dirceu Alves ingressaram no processo em 2021 para quitar saldo e obter escritura definitiva</td>
+                                <td class="p-3 text-right font-bold text-slate-400">172.000,00</td>
+                                <td class="p-3"><span class="status-pill bg-slate-700 text-slate-300">Retido em Juízo</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition border-l-4 border-slate-500">
+                                <td class="p-3 font-medium text-white">Venda — Ap. Taguatinga (2,7777%)</td>
+                                <td class="p-3 text-slate-400">Fração mínima do falecido no DF — R$ 530K total; parte do espólio depositada no final de 2021</td>
+                                <td class="p-3 text-right font-bold text-slate-400">14.718,10</td>
+                                <td class="p-3"><span class="status-pill bg-slate-700 text-slate-300">Retido em Juízo</span></td>
                             </tr>
                             <tr class="border-t-2 border-slate-600 bg-navy-800">
-                                <td class="p-3 font-bold uppercase" colspan="2">Receitas Totais do Ano</td>
+                                <td class="p-3 font-bold uppercase" colspan="2">Operacional livre (comprovantes) · Depósitos judiciais adicionais</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald text-lg">R$ 85.632,17</td>
+                                <td class="p-3 text-slate-400 text-xs">+ R$ 186.718,10 bloqueados</td>
                             </tr>
                         </tbody>
                     </table>
@@ -443,13 +458,13 @@
         <section id="summary" class="space-y-12">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h2 class="text-sm font-bold text-accent-blue tracking-widest uppercase mb-2">Bens Históricos</h2>
-                    <p class="text-4xl font-display font-bold">Levantamento de Bens e Direitos</p>
-                    <p class="text-slate-400 mt-2">Mesma base do início da sucessão (referência ITCD)</p>
+                    <h2 class="text-sm font-bold text-accent-blue tracking-widest uppercase mb-2">Primeiras Declarações — 2021</h2>
+                    <p class="text-4xl font-display font-bold">Patrimônio e Dívidas Formalizados</p>
+                    <p class="text-slate-400 mt-2">Em 2021 as Primeiras Declarações fixaram oficialmente os números do colapso: bens de R$ 3.631.354,73 contra dívidas de R$ 13.502.179,23</p>
                 </div>
-                <div class="flex gap-2">
-                    <div class="status-pill bg-slate-800 text-slate-300">Base: Decl. ITCD</div>
-                    <div class="status-pill bg-accent-emerald/20 text-accent-emerald">Valorização: R$ 2.695.487,80</div>
+                <div class="flex gap-2 flex-wrap">
+                    <div class="status-pill bg-accent-emerald/20 text-accent-emerald">Bens: R$ 3.631.354,73</div>
+                    <div class="status-pill bg-accent-crimson/20 text-accent-crimson">Dívidas: R$ 13.502.179,23</div>
                 </div>
             </div>
 
@@ -508,15 +523,19 @@
                         <h3 class="text-xl font-bold">Régius Participações S/A</h3>
                         <span class="status-pill bg-accent-crimson/20 text-accent-crimson text-xs">Crescendo</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4">Maior credor do espólio. A dívida herdada de R$ 5.999.839,69 continuava crescendo com juros e multas processuais em 2021, caminhando para mais de R$ 9 milhões em curto prazo. O processo judicial ainda estava em fase inicial — a execução plena e a penhora viriam apenas nos anos seguintes.</p>
+                    <p class="text-slate-400 text-sm mb-4">Em atualização apresentada ao juízo em março de 2021, a parte individual atribuída ao Sr. Joaquim já alcançava R$ 9.108.138,97 — um crescimento de mais de R$ 3 milhões em relação à dívida original herdada. O Sítio Veredas I e a Fazenda Cabeceira do Pinho foram bloqueados e penhorados para garantia da dívida, imobilizando os principais bens rurais do espólio.</p>
                     <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
                         <div class="flex justify-between text-sm">
                             <span class="text-slate-400">Dívida base herdada (2020)</span>
                             <span class="font-bold text-accent-crimson">R$ 5.999.839,69</span>
                         </div>
                         <div class="flex justify-between text-sm mt-2">
-                            <span class="text-slate-400">Trajetória estimada (curto prazo)</span>
-                            <span class="font-bold text-accent-crimson">→ mais de R$ 9M</span>
+                            <span class="text-slate-400">Atualizado em março/2021</span>
+                            <span class="font-bold text-accent-crimson">R$ 9.108.138,97</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <span class="text-slate-400">Imóveis penhorados</span>
+                            <span class="font-bold text-accent-crimson">Sítio Veredas I + Faz. Cabeceira do Pinho</span>
                         </div>
                     </div>
                 </div>
@@ -526,15 +545,19 @@
                         <h3 class="text-xl font-bold">Coopervap</h3>
                         <span class="status-pill bg-accent-amber/20 text-accent-amber text-xs">2º Ano de Inadimplência</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4">O falecido deixou R$ 1.370.000 renegociados com a Coopervap e inadimpliu a primeira parcela em 05/06/2020. Em 2021, o espólio seguiu sem pagar as parcelas devidas — o Breve Relato de 2022 confirma explicitamente que "parcelas vencidas e não pagas se acumularam nos anos de 2020, 2021, 2022 e 2023", sem nenhum pagamento efetivo.</p>
+                    <p class="text-slate-400 text-sm mb-4">Em abril de 2021, a Coopervap intensificou a cobrança exigindo o pagamento da parcela não quitada em 2020 (com juros: R$ 162.878,48) somada à parcela de junho/2021 (R$ 152.222,23) — total de R$ 315.100,71 com vencimento em 05/06/2021. Sem recursos, o inventariante chegou a propor uma repactuação estendendo o pagamento da dívida milionária até 2029, evidenciando o grau de sufocamento financeiro.</p>
                     <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
                         <div class="flex justify-between text-sm">
-                            <span class="text-slate-400">Saldo Coopervap (renegociado)</span>
-                            <span class="font-bold text-accent-amber">R$ 1.370.000,00</span>
+                            <span class="text-slate-400">Total exigido em jun/2021</span>
+                            <span class="font-bold text-accent-amber">R$ 315.100,71</span>
                         </div>
                         <div class="flex justify-between text-sm mt-2">
-                            <span class="text-slate-400">Status em 2021</span>
-                            <span class="font-bold text-accent-amber">Inadimplente — 2º ano consecutivo</span>
+                            <span class="text-slate-400">Proposta do inventariante</span>
+                            <span class="font-bold text-accent-amber">Parcelamento até 2029</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <span class="text-slate-400">Pagamento efetivo em 2021</span>
+                            <span class="font-bold text-accent-amber">R$ 0,00 — sem acordo</span>
                         </div>
                     </div>
                 </div>
@@ -547,8 +570,8 @@
                         <p class="text-slate-300 text-sm leading-relaxed">O fluxo de caixa do ano (+R$ 30.333,19) foi real, mas positivo apenas porque os grandes credores ainda não executavam judicialmente com força total. O saneamento fiscal realizado foi necessário, mas não atacou o núcleo do problema: a dívida bilionária com Régius e as parcelas acumuladas com Coopervap.</p>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white mb-3">Credores Menores — Também Pendentes</h4>
-                        <p class="text-slate-300 text-sm leading-relaxed">Além dos dois grandes credores, o espólio carregava: Adalgisa Nagamati (R$ 1.094.266,87), Protec (R$ 218.915,80), Sólida Assessoria (R$ 48.046,01), Adelina Gonçalves (R$ 206.800) e Banco do Brasil (R$ 995.277,78) — todos herdados do falecido e sem previsão de quitação em 2021.</p>
+                        <h4 class="text-base font-bold text-white mb-3">Novos Credores Entrando na Fila</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Em <strong class="text-white">28/jan/2021</strong>, surgiu uma ação trabalhista de Clézio Cordeiro Lima cobrando R$ 22.602,00. Em <strong class="text-white">maio/2021</strong>, Adelina Rocha de Almeida (R$ 206.800) pediu habilitação de crédito alegando prioridade por ser idosa e crédito de natureza alimentar — informando que as parcelas de abril e maio não haviam sido pagas. Além desses, permaneciam Adalgisa Nagamati (R$ 1.094.266,87), Protec (R$ 218.915,80), Sólida Assessoria (R$ 48.046,01) e Banco do Brasil (~R$ 995.277,78).</p>
                     </div>
                 </div>
             </div>
@@ -558,9 +581,9 @@
             class="shimmer rounded-[2rem] bg-gradient-to-br from-accent-blue via-navy-800 to-accent-emerald/20 p-12 text-center border-t-2 border-slate-700/50">
             <h3 class="text-sm font-bold text-white/70 tracking-widest uppercase mb-4">Conclusão Prática - Exercício
                 2021</h3>
-            <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Alívio no Caixa, Insolvência na Sombra</p>
+            <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Uma Administração de Falência, Não uma Herança</p>
             <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                O ano de 2021 trouxe uma entrada operacional real de R$ 85.632,17 (arrendamentos — Aliança Agrícola e Marco Antonio Senju), que foi integralmente consumida pelo saneamento fiscal emergencial: REFIS, ITR 2018–2020, IRPF e dívidas ativas da União, além do início do georreferenciamento. O resultado de caixa foi positivo — <span class="text-accent-emerald font-bold">+R$ 30.333,19</span> — mas esse número é enganoso: por trás da folga operacional, a dívida com a Régius seguia crescendo para além dos R$ 9 milhões e a Coopervap acumulava o segundo ano consecutivo de inadimplência. O espólio encerrou 2021 tecnicamente insolvente, com passivos reais superiores a <span class="text-accent-crimson font-bold">R$ 9,8 milhões</span>, aguardando os desdobramentos judiciais dos anos seguintes.
+                Em 2021, o inventário se transformou em uma verdadeira administração de falência. As Primeiras Declarações formalizaram o rombo: <span class="text-accent-crimson font-bold">R$ 9.870.824,50</span> negativos. Os poucos valores que ingressaram — R$ 14.718,10 do imóvel no DF, os R$ 172.000,00 da Fazenda Curralinho — eram irrelevantes diante desse déficit. A Régius atualizou sua dívida para <span class="text-white font-bold">R$ 9.108.138,97</span> já em março, penhorando os principais imóveis. A Coopervap exigiu R$ 315.100,71, sem receber nada. Adelina habilitou crédito como credora alimentar. Uma ação trabalhista surgiu em janeiro. A família não trabalhava para receber herança, mas para organizar uma longa fila de credores. Dinheiro para herdeiros, na prática, já não existia mais.
             </p>
         </section>
 
