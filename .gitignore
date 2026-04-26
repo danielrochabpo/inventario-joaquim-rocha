@@ -1,0 +1,13 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+fix_encoding.py
+
+# Arquivos temporários
+*.tmp
+*.bak

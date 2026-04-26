@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestação de Contas - 2026 (Encerramento)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0B1120',
+                            800: '#111827',
+                            700: '#1E293B',
+                        },
+                        accent: {
+                            crimson: '#EF4444',
+                            emerald: '#10B981',
+                            amber: '#F59E0B',
+                            purple: '#8B5CF6',
+                            rust: '#EA580C',
+                            gold: '#FBBF24',
+                            violet: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1120;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFF 0%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes gold-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+        }
+        .animate-gold-glow {
+            animation: gold-glow 2s infinite;
+        }
+    
+        /* ===== OTIMIZAÇÃO PARA IMPRESSÃO / PDF ===== */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm 1.2cm;
+            }
+
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            html, body {
+                background: #ffffff !important;
+                color: #1e293b !important;
+            }
+
+            main {
+                background: #ffffff !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+
+            .space-y-24 > * + * { margin-top: 1.5rem !important; }
+
+            nav { display: none !important; }
+            a[href*="Relatorio"] { display: none !important; }
+
+            .absolute.inset-0 { display: none !important; }
+            .shimmer::after { display: none !important; }
+            .relative.z-10 { position: static !important; z-index: auto !important; }
+
+            section {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                background: transparent !important;
+                padding: 0.5rem 0 !important;
+                overflow: visible !important;
+            }
+
+            section.relative { justify-content: flex-start !important; }
+
+            [class*="min-h-"] { min-height: auto !important; }
+            [class*="max-h-"] { max-height: none !important; overflow: visible !important; }
+
+            .shimmer {
+                background: #f1f5f9 !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 0.75rem !important;
+            }
+
+            .glass-card {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            h1, h2, h3, h4, p, span, td, th, li, strong {
+                color: #0f172a !important;
+                -webkit-text-fill-color: #0f172a !important;
+            }
+
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+
+            .gradient-text {
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                background-clip: unset !important;
+                -webkit-text-fill-color: #0f172a !important;
+                color: #0f172a !important;
+            }
+
+            .text-white\/50, .text-white\/70, .text-white\/80 {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+            }
+
+            .text-slate-400, .text-slate-500 {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+            }
+
+            .text-accent-emerald, .text-accent-crimson, .text-accent-amber,
+            .text-accent-indigo, .text-accent-blue, .text-accent-purple,
+            .text-accent-rust, .text-accent-teal, .text-accent-sky,
+            .text-accent-gold, .text-amber-500, .text-red-500,
+            .text-green-500, .text-purple-500 {
+                color: #0f172a !important;
+                -webkit-text-fill-color: #0f172a !important;
+                font-weight: 700 !important;
+            }
+
+            .status-pill {
+                background: #f1f5f9 !important;
+                border: 1px solid #94a3b8 !important;
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+            }
+
+            table { border-collapse: collapse !important; width: 100% !important; font-size: 9pt !important; }
+
+            th {
+                background: #e2e8f0 !important;
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+                border: 1px solid #cbd5e1 !important;
+                font-weight: 700 !important;
+                padding: 5px 8px !important;
+            }
+
+            td {
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+                border: 1px solid #e2e8f0 !important;
+                padding: 5px 8px !important;
+            }
+
+            tr { border-bottom: 1px solid #cbd5e1 !important; }
+            tbody tr:nth-child(even) { background: #f8fafc !important; }
+
+            .overflow-x-auto, .overflow-y-auto { overflow: visible !important; }
+            .sticky { position: static !important; }
+
+            canvas { max-width: 200px !important; max-height: 200px !important; page-break-inside: avoid !important; }
+
+            footer {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+                border-top: 1px solid #e2e8f0 !important;
+            }
+
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Barra de ações — oculta na impressão -->
+    <div class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
+        <a href="index.html" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Portal de Relatórios
+        </a>
+        <div class="flex gap-2">
+            <a href="pdfs/2026_Comprovantes.pdf" download class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-gold/20 hover:bg-accent-gold/30 text-accent-gold border border-accent-gold/30 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Baixar Comprovantes PDF
+            </a>
+            <button onclick="window.print()" class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Imprimir / Salvar PDF
+            </button>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 px-6 py-4 flex justify-between items-center glass-card mx-6 mt-4 rounded-2xl">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-accent-gold rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                    </path>
+                </svg>
+            </div>
+            <span class="font-display font-bold text-xl tracking-tight">STRATEGIC<span
+                    class="text-accent-gold">CASH</span></span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <a href="#summary" class="hover:text-white transition-colors">O Milhão Final</a>
+            <a href="#diagnosis" class="hover:text-white transition-colors">Tramitação e Alvarás</a>
+            <a href="#action" class="hover:text-white transition-colors">A Partilha</a>
+        </div>
+        <a href="Relatorio_2025_Final.html"
+            class="text-xs font-bold text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-full transition">←
+            Voltar para 2025</a>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- Hero Section -->
+        <section class="relative rounded-[2.5rem] overflow-hidden min-h-[600px] flex flex-col justify-end p-8 md:p-16">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-70">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/80 to-navy-900/40 opacity-90"></div>
+
+            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-end">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-accent-gold/20 border border-accent-gold/30 rounded-full animate-gold-glow">
+                        <span class="text-accent-gold text-xs font-bold uppercase tracking-widest">Encerramento & Triunfo</span>
+                    </div>
+                    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight gradient-text">
+                        Prestação de Contas <br>Inventário
+                        <span class="block text-3xl md:text-4xl mt-4 text-white/50">Exercício 2026</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-md">Fechando o ciclo. Sem mais tempestades ou credores, o processo encontra as últimas burocracias à espera do "Milhão Final" agendado para Outubro.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">A "Canetada" (Março)</p>
+                        <p class="text-2xl font-bold font-display text-accent-gold">Liberação de Alvarás e Escrituras</p>
+                    </div>
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">O Vencimento (Outubro)</p>
+                        <p class="text-2xl font-bold font-display text-accent-amber">O Último Milhão da Fazenda</p>
+                    </div>
+                    <div
+                        class="glass-card p-6 border-white/10 col-span-2 text-center bg-accent-gold/10 border-accent-gold/30">
+                        <p class="text-accent-gold text-xs font-semibold uppercase mb-1">Status do Processo</p>
+                        <p class="text-3xl font-bold font-display text-white">Preparação de Partilha dos Herdeiros</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalhamento de Movimentação -->
+        <section id="summary" class="space-y-12">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-2/3">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold font-display">A Espera e o Desfecho Burocrático</h3>
+                            <p class="text-slate-400 text-sm">O que falta entrar e sair para que a porta do tribunal se feche definitivamente.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4 mt-6">Ativos (Projeções de Entrada - 2026)</h4>
+                    <div class="overflow-x-auto text-sm mb-8">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs">Ativo / Fonte</th>
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs">Descrição Operacional</th>
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor Final (R$)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800">
+                                <tr class="hover:bg-slate-800/50 transition">
+                                    <td class="p-3 font-medium text-white">Fazenda Curralinho (Parc. Final)</td>
+                                    <td class="p-3 text-slate-400">2ª e última prestação milionária da alienação. Vencimento: Fim de Out/2026.</td>
+                                    <td class="p-3 text-right font-bold text-accent-gold">1.000.000,00</td>
+                                </tr>
+                                <tr class="border-t-2 border-slate-600 bg-navy-800">
+                                    <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Receita Total Aguardada</td>
+                                    <td class="p-3 text-right font-bold text-accent-gold text-lg">1.000.000,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-accent-amber tracking-widest uppercase mb-4">Saídas Restantes e Organização ("A Faxina Final")</h4>
+                    <div class="overflow-x-auto text-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs">Destino</th>
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs">Ação Burocrática de 2026</th>
+                                    <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Status do Alvará</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800">
+                                <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-amber">
+                                    <td class="p-3 font-medium text-accent-amber">Comissão Corretagem</td>
+                                    <td class="p-3 text-slate-400">Profissional que intermediou a milionária venda da fazenda em 2024.</td>
+                                    <td class="p-3 text-right font-bold text-accent-emerald">Liberado (09/Mar)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50 transition border-l-2 border-slate-400">
+                                    <td class="p-3 font-medium text-white">Custas Judiciais e Impostos</td>
+                                    <td class="p-3 text-slate-400">Eventuais impostos de partilha (ITCD ou Resíduos) e encerramento processual.</td>
+                                    <td class="p-3 text-right font-bold text-slate-400">Pendente (Liquidará à frente)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-blue">
+                                    <td class="p-3 font-medium text-white">Documentação: Dirceu e Antônio</td>
+                                    <td class="p-3 text-slate-400">Transferência solene de 44ha via escritura pública. Saldo R$ 172K retido no juízo foi validado.</td>
+                                    <td class="p-3 text-right font-bold text-accent-emerald">Liberado (09/Mar)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Resumo Info -->
+                <div class="w-full lg:w-1/3 flex flex-col justify-start">
+                    <div class="glass-card p-8 h-full flex flex-col justify-center text-center space-y-6">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-accent-gold/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold font-display text-white">A Partilha Imaculada</h4>
+                        <p class="text-slate-400 text-sm">Todo e qualquer dinheiro sobrante desse último fluxo tem o único destino: encerrar as gavetas e colocar dinheiro vivo e limpo no bolso dos herdeiros legítimos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights / Notas Box -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="mt-4 p-4 rounded-xl bg-accent-gold/10 border border-accent-gold/20">
+                    <p class="text-sm text-slate-300">
+                        <strong class="text-accent-gold block mb-1">O Alvará e a Urgência:</strong>
+                        Fevereiro foi carimbado pelas petições cobrando ao juízo "apreciação urgente". A liberação das amarras formais (alvarás das escrituras e comissões) no dia 09 de Março atesta que não se quer atrasos e que a porta jurídica está se encerrando com velocidade máxima.
+                    </p>
+                </div>
+                <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+                    <p class="text-sm text-slate-300">
+                        <strong class="text-white block mb-1">A Engrenagem Processual (1º Trim - 26):</strong>
+                        Composição jurídica se agilizou: Parecer favorável do Ministério Público dia 11 de Março, abrigando os interesses do herdeiro incapaz e blindando a partilha. Para coroar o desfecho, Dr. Sinomar Almeida foi substabelecido em 24/Mar, firmando o time de chegada na linha final do inventário.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O Retrospecto Histórico e a Conclusão Global -->
+        <section id="action"
+            class="shimmer rounded-[2rem] bg-gradient-to-br from-accent-gold via-navy-800 to-accent-amber/20 p-12 text-center border-t-2 border-accent-gold/30">
+            <h3 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4">Saldo Final Global: O Legado Restabelecido</h3>
+            <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Da Falência à Solvência e Partilha</p>
+            <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+                A história desses últimos 6 anos de gestão demonstra o poder esmagador de um trabalho diligente com os números nas mãos. Transformou-se um pesadelo matemático imensurável — um "banco da praça" falido onde mais de R$ 13 Milhões oprimiam a herança — numa arquitetura saneadora formidável.
+                <br><br>
+                Hoje o espólio senta nas arquibancadas assistindo o relógio girar no <strong>banho-maria</strong> e aguardando Outubro chegar. A Família fecha as cortinas honrada e com as garantias de que haverá caixa líquido, desembaraçado para entregar frutos justos sobre todo o calvário que a sucessão exigiu.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-slate-500 text-sm mt-12">
+        <p>StrategicCash Dashboard © 2026. Documentação Financeira (2020-2026). Partilha Consolidada. Confidencial.</p>
+    </footer>
+
+</body>
+
+</html>

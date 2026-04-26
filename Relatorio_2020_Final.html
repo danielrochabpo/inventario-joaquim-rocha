@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Prestação de Contas - Inventário | 2020</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0A192F',
+                            800: '#112240',
+                            700: '#1B2A4E',
+                        },
+                        accent: {
+                            emerald: '#10B981',
+                            crimson: '#EF4444',
+                            amber: '#F59E0B',
+                            indigo: '#6366F1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A192F;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Custom scrollbar for the table */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.3);
+            border-radius: 10px;
+        }
+
+        /* ===== OTIMIZAÇÃO PARA IMPRESSÃO / PDF ===== */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm 1.2cm;
+            }
+
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            html, body {
+                background: #ffffff !important;
+                color: #1e293b !important;
+            }
+
+            main {
+                background: #ffffff !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+
+            .space-y-24 > * + * { margin-top: 1.5rem !important; }
+
+            /* Navegação */
+            nav { display: none !important; }
+            a[href*="Relatorio"] { display: none !important; }
+
+            /* Hero: remove fundo e comprime altura */
+            .absolute.inset-0 { display: none !important; }
+            .shimmer::after { display: none !important; }
+            .relative.z-10 { position: static !important; z-index: auto !important; }
+
+            section {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                background: transparent !important;
+                padding: 0.5rem 0 !important;
+                overflow: visible !important;
+            }
+
+            section.relative { justify-content: flex-start !important; }
+
+            [class*="min-h-"] { min-height: auto !important; }
+            [class*="max-h-"] { max-height: none !important; overflow: visible !important; }
+
+            /* Seção de conclusão */
+            .shimmer {
+                background: #f1f5f9 !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 0.75rem !important;
+            }
+
+            /* Cards */
+            .glass-card {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Tipografia */
+            h1, h2, h3, h4, p, span, td, th, li, strong {
+                color: #0f172a !important;
+                -webkit-text-fill-color: #0f172a !important;
+            }
+
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+
+            .gradient-text {
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                background-clip: unset !important;
+                -webkit-text-fill-color: #0f172a !important;
+                color: #0f172a !important;
+            }
+
+            .text-white\/50, .text-white\/70, .text-white\/80 {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+            }
+
+            .text-slate-400, .text-slate-500 {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+            }
+
+            .text-accent-emerald, .text-accent-crimson, .text-accent-amber,
+            .text-accent-indigo, .text-accent-blue, .text-accent-purple,
+            .text-accent-rust, .text-accent-teal, .text-accent-sky,
+            .text-accent-gold, .text-amber-500, .text-red-500,
+            .text-green-500, .text-purple-500 {
+                color: #0f172a !important;
+                -webkit-text-fill-color: #0f172a !important;
+                font-weight: 700 !important;
+            }
+
+            .status-pill {
+                background: #f1f5f9 !important;
+                border: 1px solid #94a3b8 !important;
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+            }
+
+            /* Tabelas */
+            table { border-collapse: collapse !important; width: 100% !important; font-size: 9pt !important; }
+
+            th {
+                background: #e2e8f0 !important;
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+                border: 1px solid #cbd5e1 !important;
+                font-weight: 700 !important;
+                padding: 5px 8px !important;
+            }
+
+            td {
+                color: #1e293b !important;
+                -webkit-text-fill-color: #1e293b !important;
+                border: 1px solid #e2e8f0 !important;
+                padding: 5px 8px !important;
+            }
+
+            tr { border-bottom: 1px solid #cbd5e1 !important; }
+            tbody tr:nth-child(even) { background: #f8fafc !important; }
+
+            /* Overflow: expandir para impressão */
+            .overflow-x-auto, .overflow-y-auto { overflow: visible !important; }
+            .sticky { position: static !important; }
+
+            /* Canvas */
+            canvas { max-width: 200px !important; max-height: 200px !important; page-break-inside: avoid !important; }
+
+            /* Footer */
+            footer {
+                color: #64748b !important;
+                -webkit-text-fill-color: #64748b !important;
+                border-top: 1px solid #e2e8f0 !important;
+            }
+
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Barra de ações — oculta na impressão -->
+    <div class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
+        <a href="index.html" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Portal de Relatórios
+        </a>
+        <div class="flex gap-2">
+            <a href="pdfs/2020_Comprovantes.pdf" download class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-indigo/20 hover:bg-accent-indigo/30 text-accent-indigo border border-accent-indigo/30 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Baixar Comprovantes PDF
+            </a>
+            <button onclick="window.print()" class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Imprimir / Salvar PDF
+            </button>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 px-6 py-4 flex justify-between items-center glass-card mx-6 mt-4 rounded-2xl">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-accent-indigo rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                    </path>
+                </svg>
+            </div>
+            <span class="font-display font-bold text-xl tracking-tight">Inventário<span
+                    class="text-accent-indigo">Joaquim Rocha</span></span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <a href="#summary" class="hover:text-white transition-colors">Bens</a>
+            <a href="#vision" class="hover:text-white transition-colors">Fluxo 2020</a>
+            <a href="#details" class="hover:text-white transition-colors">Extrato CSV</a>
+            <a href="#diagnosis" class="hover:text-white transition-colors">Dívidas</a>
+        </div>
+        <div class="status-pill bg-accent-indigo/20 text-accent-indigo border border-accent-indigo/30">
+            Ano Base: 2020
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- Header Section -->
+        <section class="relative rounded-[2.5rem] overflow-hidden min-h-[500px] flex flex-col justify-end p-8 md:p-16">
+            <div
+                class="absolute inset-0 bg-[url(''https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent"></div>
+
+            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-end">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-accent-crimson/20 border border-accent-crimson/30 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-accent-crimson animate-pulse"></span>
+                        <span class="text-accent-crimson text-xs font-bold uppercase tracking-widest">Risco Crítico de
+                            Solvência</span>
+                    </div>
+                    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight gradient-text">
+                        Prestação de Contas <br>Inventário
+                    </h1>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Ativos</p>
+                        <p class="text-2xl font-bold font-display text-accent-emerald">R$ 2.69M</p>
+                    </div>
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Passivos</p>
+                        <p class="text-2xl font-bold font-display text-accent-crimson">R$ 13.5M</p>
+                    </div>
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Saídas 2020</p>
+                        <p class="text-2xl font-bold font-display text-accent-amber">R$ 14.5K</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section id="summary" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-sm font-bold text-accent-indigo tracking-widest uppercase mb-2">Avaliação de Ativos
+                    </h2>
+                    <p class="text-4xl font-display font-bold">Levantamento de Bens e Direitos</p>
+                </div>
+                <div class="status-pill bg-accent-emerald/20 text-accent-emerald">Valorização: R$ 2.695.487,80</div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 border-t-4 border-t-accent-emerald">
+                    <h3 class="text-xl font-bold mb-4">Propriedades Rurais</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b border-slate-700 pb-2"><span>Sítio Veredas I</span>
+                            <span class="text-white font-bold">R$ 775.420</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-700 pb-2"><span>Cabeceira Pinho</span>
+                            <span class="text-white font-bold">R$ 567.312</span>
+                        </li>
+                        <li class="flex justify-between pb-2 text-slate-500"><span>Faz. Curralinho</span> <span>R$
+                                582.025</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 border-t-4 border-t-accent-indigo">
+                    <h3 class="text-xl font-bold mb-4">Urbano & Cotas</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b border-slate-700 pb-2"><span>Apto Guará I</span> <span
+                                class="text-white font-bold">R$ 209.988</span></li>
+                        <li class="flex justify-between border-b border-slate-700 pb-2"><span>Cota Disk Cerveja</span>
+                            <span class="text-white font-bold">R$ 100.000</span>
+                        </li>
+                        <li class="flex justify-between pb-2"><span>Cotas Coopervap</span> <span
+                                class="text-white font-bold">R$ 38.349</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 border-t-4 border-t-accent-amber">
+                    <h3 class="text-xl font-bold mb-4">Dinheiro e Veículos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b border-slate-700 pb-2"><span>Depósito Juízo</span>
+                            <span class="text-accent-emerald font-bold">R$ 389.220</span>
+                        </li>
+                        <li class="flex justify-between pb-2"><span>Frota Diversa</span> <span
+                                class="text-white font-bold">R$ 13.000</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fluxo Section -->
+        <section id="vision" class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 glass-card p-8">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold font-display">Resumo Financeiro Consolidado</h3>
+                    <p class="text-slate-400 text-sm">Agrupamento de desembolsos por categoria funcional</p>
+                </div>
+                <div class="overflow-x-auto text-sm">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-700 text-slate-400 uppercase tracking-wider text-xs">
+                                <th class="p-3">Categoria</th>
+                                <th class="p-3 text-right">Débitos (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="p-3">Administrativa (Jazigo/Funeral)</td>
+                                <td class="p-3 text-right font-bold">4.759,98</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Fiscal (ITR)</td>
+                                <td class="p-3 text-right font-bold">7.894,92</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Honorários / Contabilidade</td>
+                                <td class="p-3 text-right font-bold">1.000,00</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Cartório</td>
+                                <td class="p-3 text-right font-bold">898,24</td>
+                            </tr>
+                            <tr class="bg-navy-800">
+                                <td class="p-3 font-bold uppercase">Total Saídas 2020</td>
+                                <td class="p-3 text-right font-bold text-accent-crimson text-lg">R$ 14.553,14</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold font-display mb-6">Custos 2020</h3>
+                    <div class="h-[220px]">
+                        <canvas id="costDoughnut"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVO: Content List (CSV Data) -->
+        <section id="details" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-sm font-bold text-accent-indigo tracking-widest uppercase mb-2">Transparência Total
+                    </h2>
+                    <p class="text-3xl font-display font-bold">Extrato Detalhado de Movimentações</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-slate-500 block">Fonte de dados:</span>
+                    <span class="text-sm font-mono text-slate-300">planilha_prestacao_contas_2020.csv</span>
+                </div>
+            </div>
+
+            <div class="glass-card overflow-hidden">
+                <div class="max-h-[600px] overflow-y-auto custom-scrollbar">
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead class="sticky top-0 bg-navy-800 z-20 shadow-xl">
+                            <tr class="text-slate-400 uppercase tracking-wider text-[10px] font-bold">
+                                <th class="p-4 border-b border-white/10">Data</th>
+                                <th class="p-4 border-b border-white/10">Categoria</th>
+                                <th class="p-4 border-b border-white/10">Descrição / Documento</th>
+                                <th class="p-4 border-b border-white/10">Observação</th>
+                                <th class="p-4 border-b border-white/10 text-right">Débito (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="csv-table-body" class="divide-y divide-white/5 text-xs">
+                            <!-- Data injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="p-4 bg-white/5 flex justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest">
+                    <span>Total de 17 registros processados</span>
+                    <span>Consolidado Fiscal 2020</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnosis Section -->
+        <section id="diagnosis" class="space-y-10">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-sm font-bold text-accent-crimson tracking-widest uppercase mb-2">Panorama de Riscos</h2>
+                <h3 class="text-4xl font-display font-bold">Passivos Sistêmicos (Dívidas)</h3>
+                <p class="text-slate-400 mt-4">Déficit estrutural: Ativos de R$ 2,7M vs Passivos de R$ 13,5M.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 border-l-4 border-accent-crimson">
+                    <h4 class="font-bold text-lg mb-2">Régius Previdência</h4>
+                    <p class="text-slate-400 text-sm mb-4">Dívida de R$ 5.999.839,69 escalando com juros contratuais.
+                    </p>
+                </div>
+                <div class="glass-card p-6 border-l-4 border-accent-amber">
+                    <h4 class="font-bold text-lg mb-2">Instituições Financeiras</h4>
+                    <p class="text-slate-400 text-sm mb-4">Banco do Brasil e Créditos Agrícolas somando +R$ 1,2M.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Callout -->
+        <section id="action"
+            class="shimmer rounded-[2rem] bg-gradient-to-br from-accent-indigo via-navy-900 to-accent-crimson/10 p-12 text-center border border-white/10">
+            <h3 class="text-sm font-bold text-white/70 tracking-widest uppercase mb-4">Conclusão do Exercício</h3>
+            <p class="text-4xl font-display font-bold text-white mb-6">Herança Insolvente</p>
+            <p class="text-lg text-white/80 max-w-3xl mx-auto">
+                O saldo negativo base de <span class="text-accent-crimson font-bold">-R$ 9.870.824,50</span> indica que
+                o espólio, no estado em que se encontrava em 2020, não comportava partilha líquida positiva aos
+                herdeiros sem antes a liquidação integral do passivo.
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        // CSV Data Processing
+        const csvData = [
+            { date: "06/08/2020", cat: "Desp. Adm.", desc: "Cessão e Manutenção Jazigo", doc: "TP-009929", obs: "Sepultamento, Jazigo e Perpetuidade", value: 4759.98 },
+            { date: "02/10/2020", cat: "Cartório", desc: "Reg. Imóveis Paracatu", doc: "-", obs: "Despesas cartoriais", value: 898.24 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002316", obs: "Propriedade Territorial Rural", value: 994.43 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002318", obs: "Propriedade Territorial Rural", value: 994.43 },
+            { date: "10/10/2020", cat: "Honorários", desc: "Batuta Contabilidade", doc: "-", obs: "Atrasos contabilidade Joaquim Rocha", value: 1000.00 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002312", obs: "Propriedade Territorial Rural", value: 979.30 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002315", obs: "Propriedade Territorial Rural", value: 979.30 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002317", obs: "Propriedade Territorial Rural", value: 994.43 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002314", obs: "Propriedade Territorial Rural", value: 979.30 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002319", obs: "Propriedade Territorial Rural", value: 994.43 },
+            { date: "14/08/2020", cat: "Fiscal", desc: "ITR - Imposto Rural", doc: "10100106866002313", obs: "Propriedade Territorial Rural", value: 979.30 },
+            { date: "01/12/2020", cat: "Ajuste", desc: "Ajuste de Caixa", doc: "-", obs: "Arredondamento", value: 0.01 },
+            { date: "01/11/2020", cat: "Ajuste", desc: "Ajuste de Caixa", doc: "-", obs: "Arredondamento", value: 0.01 },
+            { date: "01/09/2020", cat: "Ajuste", desc: "Ajuste de Caixa", doc: "-", obs: "Arredondamento", value: 0.01 }
+        ];
+
+        const tableBody = document.getElementById('csv-table-body');
+
+        csvData.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.className = "hover:bg-white/5 transition";
+            tr.innerHTML = `
+                <td class="p-4 font-mono text-slate-400">${row.date}</td>
+                <td class="p-4"><span class="status-pill ${row.cat === 'Fiscal' ? 'bg-accent-crimson/10 text-accent-crimson' : 'bg-accent-indigo/10 text-accent-indigo'}">${row.cat}</span></td>
+                <td class="p-4">
+                    <div class="font-bold text-slate-200">${row.desc}</div>
+                    <div class="text-[10px] text-slate-500">${row.doc !== '-' ? 'DOC: ' + row.doc : ''}</div>
+                </td>
+                <td class="p-4 text-slate-400 max-w-xs truncate" title="${row.obs}">${row.obs}</td>
+                <td class="p-4 text-right font-bold text-white">${row.value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
+            `;
+            tableBody.appendChild(tr);
+        });
+
+        // Chart.js
+        const ctxCost = document.getElementById('costDoughnut').getContext('2d');
+        new Chart(ctxCost, {
+            type: 'doughnut',
+            data: {
+                labels: ['Fiscal (ITR)', 'Desp. Adm.', 'Honorários', 'Cartório'],
+                datasets: [{
+                    data: [54, 33, 7, 6],
+                    backgroundColor: ['#EF4444', '#F59E0B', '#6366F1', '#10B981'],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#94A3B8', font: { size: 10 } } }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
