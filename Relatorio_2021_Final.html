@@ -311,15 +311,13 @@
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 bg-accent-blue/20 border border-accent-blue/30 rounded-full">
                         <span class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></span>
-                        <span class="text-accent-blue text-xs font-bold uppercase tracking-widest">Ano de Recuperação de
-                            Liquidez</span>
+                        <span class="text-accent-blue text-xs font-bold uppercase tracking-widest">Fluxo Positivo — Passivo Acumulado</span>
                     </div>
                     <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight gradient-text">
                         Prestação de Contas <br>Inventário
                         <span class="block text-3xl md:text-4xl mt-4 text-white/50">Exercício 2021</span>
                     </h1>
-                    <p class="text-slate-300 text-lg max-w-md">Relatório gerencial consolidado do exercício de 2021.
-                        Entrada de receitas operacionais e forte saneamento fiscal.</p>
+                    <p class="text-slate-300 text-lg max-w-md">Relatório gerencial consolidado do exercício de 2021. Pequena folga operacional de <strong class="text-white">+R$ 30.333,19</strong>, enquanto Régius e Coopervap acumulavam parcelas não pagas e o espólio seguia tecnicamente insolvente em mais de <strong class="text-white">R$ 9,8 milhões</strong>.</p>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
@@ -493,20 +491,76 @@
             </div>
         </section>
 
+        <!-- Panorama dos Passivos 2021 -->
+        <section id="diagnosis" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-sm font-bold text-accent-amber tracking-widest uppercase mb-2">Panorama dos Passivos</h2>
+                    <p class="text-4xl font-display font-bold">O Peso Invisível de 2021</p>
+                    <p class="text-slate-400 mt-2">O saldo positivo de caixa escondia uma insolvência acumulada de mais de <strong class="text-white">R$ 9,8 milhões</strong> em credores herdados.</p>
+                </div>
+                <div class="status-pill bg-accent-crimson/20 text-accent-crimson border border-accent-crimson/30">Espólio Insolvente</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 border-l-4 border-l-[#EF4444]">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">Régius Participações S/A</h3>
+                        <span class="status-pill bg-accent-crimson/20 text-accent-crimson text-xs">Crescendo</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Maior credor do espólio. A dívida herdada de R$ 5.999.839,69 continuava crescendo com juros e multas processuais em 2021, caminhando para mais de R$ 9 milhões em curto prazo. O processo judicial ainda estava em fase inicial — a execução plena e a penhora viriam apenas nos anos seguintes.</p>
+                    <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Dívida base herdada (2020)</span>
+                            <span class="font-bold text-accent-crimson">R$ 5.999.839,69</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <span class="text-slate-400">Trajetória estimada (curto prazo)</span>
+                            <span class="font-bold text-accent-crimson">→ mais de R$ 9M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 border-l-4 border-l-[#F59E0B]">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">Coopervap</h3>
+                        <span class="status-pill bg-accent-amber/20 text-accent-amber text-xs">2º Ano de Inadimplência</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">O falecido deixou R$ 1.370.000 renegociados com a Coopervap e inadimpliu a primeira parcela em 05/06/2020. Em 2021, o espólio seguiu sem pagar as parcelas devidas — o Breve Relato de 2022 confirma explicitamente que "parcelas vencidas e não pagas se acumularam nos anos de 2020, 2021, 2022 e 2023", sem nenhum pagamento efetivo.</p>
+                    <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Saldo Coopervap (renegociado)</span>
+                            <span class="font-bold text-accent-amber">R$ 1.370.000,00</span>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <span class="text-slate-400">Status em 2021</span>
+                            <span class="font-bold text-accent-amber">Inadimplente — 2º ano consecutivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 border border-accent-amber/20 bg-accent-amber/5">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-base font-bold text-accent-amber mb-3">Dicotomia do Exercício 2021</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">O fluxo de caixa do ano (+R$ 30.333,19) foi real, mas positivo apenas porque os grandes credores ainda não executavam judicialmente com força total. O saneamento fiscal realizado foi necessário, mas não atacou o núcleo do problema: a dívida bilionária com Régius e as parcelas acumuladas com Coopervap.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-3">Credores Menores — Também Pendentes</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Além dos dois grandes credores, o espólio carregava: Adalgisa Nagamati (R$ 1.094.266,87), Protec (R$ 218.915,80), Sólida Assessoria (R$ 48.046,01), Adelina Gonçalves (R$ 206.800) e Banco do Brasil (R$ 995.277,78) — todos herdados do falecido e sem previsão de quitação em 2021.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="action"
             class="shimmer rounded-[2rem] bg-gradient-to-br from-accent-blue via-navy-800 to-accent-emerald/20 p-12 text-center border-t-2 border-slate-700/50">
             <h3 class="text-sm font-bold text-white/70 tracking-widest uppercase mb-4">Conclusão Prática - Exercício
                 2021</h3>
-            <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Um Alívio de Liquidez para Saneamento
-            </p>
+            <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Alívio no Caixa, Insolvência na Sombra</p>
             <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                Diferente de 2020, o ano de 2021 trouxe uma entrada operacional significativa de R$ 85.632,17 oriunda de
-                parcerias e arrendamentos (Aliança Agrícola e Marco Antonio Senju). No entanto, esse capital foi
-                iminentemente absorvido pela urgência do passivo em curso: pagamentos de REFIS, ITR atrasados
-                (2018-2020), IRPF e saneamento intenso de dívidas ativas da União, além do início dos custos com
-                georreferenciamento. O resultado positivo do ano (<span class="text-accent-emerald font-bold">+R$
-                    30.333,19</span>) cobriu o déficit do ano anterior, trazendo fôlego inicial para a pesada
-                administração da insolvência do espólio.
+                O ano de 2021 trouxe uma entrada operacional real de R$ 85.632,17 (arrendamentos — Aliança Agrícola e Marco Antonio Senju), que foi integralmente consumida pelo saneamento fiscal emergencial: REFIS, ITR 2018–2020, IRPF e dívidas ativas da União, além do início do georreferenciamento. O resultado de caixa foi positivo — <span class="text-accent-emerald font-bold">+R$ 30.333,19</span> — mas esse número é enganoso: por trás da folga operacional, a dívida com a Régius seguia crescendo para além dos R$ 9 milhões e a Coopervap acumulava o segundo ano consecutivo de inadimplência. O espólio encerrou 2021 tecnicamente insolvente, com passivos reais superiores a <span class="text-accent-crimson font-bold">R$ 9,8 milhões</span>, aguardando os desdobramentos judiciais dos anos seguintes.
             </p>
         </section>
 
