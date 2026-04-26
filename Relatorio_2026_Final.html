@@ -92,13 +92,21 @@
         }
 
         @keyframes gold-glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
-            50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+            }
         }
+
         .animate-gold-glow {
             animation: gold-glow 2s infinite;
         }
-    
+
         /* ===== OTIMIZAÇÃO PARA IMPRESSÃO / PDF ===== */
         @media print {
             @page {
@@ -106,12 +114,15 @@
                 margin: 1.5cm 1.2cm;
             }
 
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
                 animation: none !important;
                 transition: none !important;
             }
 
-            html, body {
+            html,
+            body {
                 background: #ffffff !important;
                 color: #1e293b !important;
             }
@@ -122,14 +133,30 @@
                 max-width: 100% !important;
             }
 
-            .space-y-24 > * + * { margin-top: 1.5rem !important; }
+            .space-y-24>*+* {
+                margin-top: 1.5rem !important;
+            }
 
-            nav { display: none !important; }
-            a[href*="Relatorio"] { display: none !important; }
+            nav {
+                display: none !important;
+            }
 
-            .absolute.inset-0 { display: none !important; }
-            .shimmer::after { display: none !important; }
-            .relative.z-10 { position: static !important; z-index: auto !important; }
+            a[href*="Relatorio"] {
+                display: none !important;
+            }
+
+            .absolute.inset-0 {
+                display: none !important;
+            }
+
+            .shimmer::after {
+                display: none !important;
+            }
+
+            .relative.z-10 {
+                position: static !important;
+                z-index: auto !important;
+            }
 
             section {
                 break-inside: avoid !important;
@@ -139,10 +166,18 @@
                 overflow: visible !important;
             }
 
-            section.relative { justify-content: flex-start !important; }
+            section.relative {
+                justify-content: flex-start !important;
+            }
 
-            [class*="min-h-"] { min-height: auto !important; }
-            [class*="max-h-"] { max-height: none !important; overflow: visible !important; }
+            [class*="min-h-"] {
+                min-height: auto !important;
+            }
+
+            [class*="max-h-"] {
+                max-height: none !important;
+                overflow: visible !important;
+            }
 
             .shimmer {
                 background: #f1f5f9 !important;
@@ -159,12 +194,24 @@
                 page-break-inside: avoid !important;
             }
 
-            h1, h2, h3, h4, p, span, td, th, li, strong {
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            span,
+            td,
+            th,
+            li,
+            strong {
                 color: #0f172a !important;
                 -webkit-text-fill-color: #0f172a !important;
             }
 
-            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h1 {
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
 
             .gradient-text {
                 background: none !important;
@@ -174,21 +221,33 @@
                 color: #0f172a !important;
             }
 
-            .text-white\/50, .text-white\/70, .text-white\/80 {
+            .text-white\/50,
+            .text-white\/70,
+            .text-white\/80 {
                 color: #64748b !important;
                 -webkit-text-fill-color: #64748b !important;
             }
 
-            .text-slate-400, .text-slate-500 {
+            .text-slate-400,
+            .text-slate-500 {
                 color: #64748b !important;
                 -webkit-text-fill-color: #64748b !important;
             }
 
-            .text-accent-emerald, .text-accent-crimson, .text-accent-amber,
-            .text-accent-indigo, .text-accent-blue, .text-accent-purple,
-            .text-accent-rust, .text-accent-teal, .text-accent-sky,
-            .text-accent-gold, .text-amber-500, .text-red-500,
-            .text-green-500, .text-purple-500 {
+            .text-accent-emerald,
+            .text-accent-crimson,
+            .text-accent-amber,
+            .text-accent-indigo,
+            .text-accent-blue,
+            .text-accent-purple,
+            .text-accent-rust,
+            .text-accent-teal,
+            .text-accent-sky,
+            .text-accent-gold,
+            .text-amber-500,
+            .text-red-500,
+            .text-green-500,
+            .text-purple-500 {
                 color: #0f172a !important;
                 -webkit-text-fill-color: #0f172a !important;
                 font-weight: 700 !important;
@@ -201,7 +260,11 @@
                 -webkit-text-fill-color: #1e293b !important;
             }
 
-            table { border-collapse: collapse !important; width: 100% !important; font-size: 9pt !important; }
+            table {
+                border-collapse: collapse !important;
+                width: 100% !important;
+                font-size: 9pt !important;
+            }
 
             th {
                 background: #e2e8f0 !important;
@@ -219,13 +282,28 @@
                 padding: 5px 8px !important;
             }
 
-            tr { border-bottom: 1px solid #cbd5e1 !important; }
-            tbody tr:nth-child(even) { background: #f8fafc !important; }
+            tr {
+                border-bottom: 1px solid #cbd5e1 !important;
+            }
 
-            .overflow-x-auto, .overflow-y-auto { overflow: visible !important; }
-            .sticky { position: static !important; }
+            tbody tr:nth-child(even) {
+                background: #f8fafc !important;
+            }
 
-            canvas { max-width: 200px !important; max-height: 200px !important; page-break-inside: avoid !important; }
+            .overflow-x-auto,
+            .overflow-y-auto {
+                overflow: visible !important;
+            }
+
+            .sticky {
+                position: static !important;
+            }
+
+            canvas {
+                max-width: 200px !important;
+                max-height: 200px !important;
+                page-break-inside: avoid !important;
+            }
 
             footer {
                 color: #64748b !important;
@@ -233,7 +311,53 @@
                 border-top: 1px solid #e2e8f0 !important;
             }
 
-            .no-print { display: none !important; }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE MOBILE FIRST ===== */
+        @media (max-width: 768px) {
+            /* Espaçamento principal */
+            main {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                padding-top: 1.5rem !important;
+            }
+            main > * + * { margin-top: 2rem !important; }
+
+            /* Navegação */
+            nav {
+                margin: 0.5rem 0.75rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+
+            /* Cards internos */
+            .glass-card { padding: 1rem !important; }
+
+            /* Hero — altura mínima reduzida */
+            section[class*="min-h-"] { min-height: 380px !important; }
+
+            /* Tipografia */
+            h1 { font-size: 1.875rem !important; line-height: 1.2 !important; }
+            h2 { font-size: 1.375rem !important; }
+            h3 { font-size: 1.125rem !important; }
+            .text-xl { font-size: 0.9375rem !important; line-height: 1.5 !important; }
+            .text-lg { font-size: 0.875rem !important; }
+            .text-4xl { font-size: 1.5rem !important; }
+            .text-5xl { font-size: 1.75rem !important; }
+
+            /* Seção de conclusão */
+            .shimmer { padding: 1.5rem 1rem !important; border-radius: 1.25rem !important; }
+
+            /* Tabelas */
+            td, th { padding: 0.375rem 0.5rem !important; font-size: 0.75rem !important; }
+
+            /* Pills */
+            .status-pill { font-size: 0.625rem !important; padding: 2px 8px !important; }
+
+            /* Barra de ações — wrap no mobile */
+            .no-print { padding: 0.5rem 0.75rem !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
         }
     </style>
 </head>
@@ -241,18 +365,30 @@
 <body class="antialiased">
 
     <!-- Barra de ações — oculta na impressão -->
-    <div class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
-        <a href="index.html" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    <div
+        class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
+        <a href="index.html"
+            class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
             Portal de Relatórios
         </a>
         <div class="flex gap-2">
-            <a href="pdfs/2026_Comprovantes.pdf" download class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-gold/20 hover:bg-accent-gold/30 text-accent-gold border border-accent-gold/30 rounded-lg transition font-semibold">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <a href="pdfs/2026_Comprovantes.pdf" download
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-gold/20 hover:bg-accent-gold/30 text-accent-gold border border-accent-gold/30 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
                 Baixar Comprovantes PDF
             </a>
-            <button onclick="window.print()" class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <button onclick="window.print()"
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
                 Imprimir / Salvar PDF
             </button>
         </div>
@@ -267,8 +403,8 @@
                     </path>
                 </svg>
             </div>
-            <span class="font-display font-bold text-xl tracking-tight">STRATEGIC<span
-                    class="text-accent-gold">CASH</span></span>
+            <span class="font-display font-bold text-xl tracking-tight">Joaquim<span
+                    class="text-accent-gold">Rocha</span></span>
         </div>
         <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <a href="#summary" class="hover:text-white transition-colors">Raio-X Financeiro</a>
@@ -287,33 +423,40 @@
             <div
                 class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-70">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/80 to-navy-900/40 opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/80 to-navy-900/40 opacity-90">
+            </div>
 
             <div class="relative z-10 grid md:grid-cols-2 gap-12 items-end">
                 <div class="space-y-6">
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 bg-accent-gold/20 border border-accent-gold/30 rounded-full animate-gold-glow">
-                        <span class="text-accent-gold text-xs font-bold uppercase tracking-widest">Última Barreira — Abril/2026</span>
+                        <span class="text-accent-gold text-xs font-bold uppercase tracking-widest">Última Barreira —
+                            Abril/2026</span>
                     </div>
                     <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight gradient-text">
                         Prestação de Contas <br>Inventário
                         <span class="block text-3xl md:text-4xl mt-4 text-white/50">Exercício 2026</span>
                     </h1>
-                    <p class="text-slate-300 text-lg max-w-md">O ano decisivo. Uma nova negociação com a Coopervap em abril de 2026 redefine o desfecho: o espólio precisa honrar R$ 4,4M para selar a paz definitiva e abrir caminho à partilha.</p>
+                    <p class="text-slate-300 text-lg max-w-md">O ano decisivo. Uma nova negociação com a Coopervap em
+                        abril de 2026 redefine o desfecho: o espólio precisa honrar R$ 4,4M para selar a paz definitiva
+                        e abrir caminho à partilha.</p>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Caixa Disponível (Juízo + Conta)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Caixa Disponível (Juízo + Conta)
+                        </p>
                         <p class="text-2xl font-bold font-display text-accent-gold">R$ 1.398.105,35</p>
                     </div>
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">A Receber (Arrend. + Parcela Fazenda)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">A Receber (Arrend. + Parcela
+                            Fazenda)</p>
                         <p class="text-2xl font-bold font-display text-accent-amber">+ R$ 1.752.689,67</p>
                     </div>
                     <div
                         class="glass-card p-6 border-white/10 col-span-2 text-center bg-amber-500/10 border-amber-500/30">
-                        <p class="text-amber-400 text-xs font-semibold uppercase mb-1">Nova Obrigação — Coopervap (Abril/2026)</p>
+                        <p class="text-amber-400 text-xs font-semibold uppercase mb-1">Nova Obrigação — Coopervap
+                            (Abril/2026)</p>
                         <p class="text-3xl font-bold font-display text-white">R$ 4.400.000,00 em 2 parcelas</p>
                     </div>
                 </div>
@@ -324,46 +467,61 @@
         <section id="summary" class="space-y-12">
             <div>
                 <h3 class="text-2xl font-bold font-display mb-1">Raio-X Financeiro — Posição em Abril/2026</h3>
-                <p class="text-slate-400 text-sm mb-8">Todos os recursos disponíveis e as obrigações que ainda precisam ser honradas para que o inventário chegue ao fim.</p>
+                <p class="text-slate-400 text-sm mb-8">Todos os recursos disponíveis e as obrigações que ainda precisam
+                    ser honradas para que o inventário chegue ao fim.</p>
 
-                <h4 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4">Ativos — Recursos Disponíveis e a Receber</h4>
+                <h4 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4">Ativos — Recursos
+                    Disponíveis e a Receber</h4>
                 <div class="overflow-x-auto text-sm mb-8">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="border-b border-slate-700 text-slate-400">
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Origem / Fonte</th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Descrição</th>
-                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)</th>
+                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)
+                                </th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Situação</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-800">
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Saldo Depositado em Juízo</td>
-                                <td class="p-3 text-slate-400">Valores já à disposição do juiz na conta vinculada ao processo.</td>
+                                <td class="p-3 text-slate-400">Valores já à disposição do juiz na conta vinculada ao
+                                    processo.</td>
                                 <td class="p-3 text-right font-bold text-accent-gold">770.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Disponível</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Disponível</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Caixa do Espólio (Conta Própria)</td>
                                 <td class="p-3 text-slate-400">Saldo em conta corrente do espólio, fora do juízo.</td>
                                 <td class="p-3 text-right font-bold text-accent-gold">628.105,35</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Disponível</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Disponível</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Arrendamento Rural — 2026</td>
-                                <td class="p-3 text-slate-400">Receita de arrendamento das terras do espólio referente ao exercício de 2026.</td>
+                                <td class="p-3 text-slate-400">Receita de arrendamento das terras do espólio referente
+                                    ao exercício de 2026.</td>
                                 <td class="p-3 text-right font-bold text-accent-amber">752.689,67</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">A Receber</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">A
+                                        Receber</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Fazenda Curralinho — Última Parcela</td>
-                                <td class="p-3 text-slate-400">2ª e última prestação da venda ao Sr. Eduardo Henrique Borin. Vencimento: out/2026.</td>
+                                <td class="p-3 text-slate-400">2ª e última prestação da venda ao Sr. Eduardo Henrique
+                                    Borin. Vencimento: out/2026.</td>
                                 <td class="p-3 text-right font-bold text-accent-amber">1.000.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">Out/2026</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">Out/2026</span>
+                                </td>
                             </tr>
                             <tr class="border-t-2 border-slate-500 bg-navy-800">
-                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Recursos Disponíveis + Previstos</td>
+                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Recursos
+                                    Disponíveis + Previstos</td>
                                 <td class="p-3 text-right font-bold text-accent-gold text-lg">3.150.795,02</td>
                                 <td class="p-3"></td>
                             </tr>
@@ -371,44 +529,59 @@
                     </table>
                 </div>
 
-                <h4 class="text-sm font-bold text-accent-crimson tracking-widest uppercase mb-4">Passivos — Obrigações Pendentes em 2026</h4>
+                <h4 class="text-sm font-bold text-accent-crimson tracking-widest uppercase mb-4">Passivos — Obrigações
+                    Pendentes em 2026</h4>
                 <div class="overflow-x-auto text-sm mb-8">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="border-b border-slate-700 text-slate-400">
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Credor / Destino</th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Descrição</th>
-                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)</th>
+                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)
+                                </th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Prazo</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-800">
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-crimson">
                                 <td class="p-3 font-medium text-accent-crimson">Coopervap — 1ª Parcela do Acordo</td>
-                                <td class="p-3 text-slate-400">Primeira parcela do acordo de abril/2026 (R$ 4M à cooperativa + R$ 400K a advogados).</td>
+                                <td class="p-3 text-slate-400">Primeira parcela do acordo de abril/2026 (R$ 4M à
+                                    cooperativa + R$ 400K a advogados).</td>
                                 <td class="p-3 text-right font-bold text-accent-crimson">2.750.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-red-900/50 text-accent-crimson border border-red-700/50">30/Jun/2026</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-red-900/50 text-accent-crimson border border-red-700/50">30/Jun/2026</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-crimson">
                                 <td class="p-3 font-medium text-accent-crimson">Coopervap — 2ª Parcela do Acordo</td>
-                                <td class="p-3 text-slate-400">Segunda e última parcela. Quitação integral da dívida histórica da cooperativa.</td>
+                                <td class="p-3 text-slate-400">Segunda e última parcela. Quitação integral da dívida
+                                    histórica da cooperativa.</td>
                                 <td class="p-3 text-right font-bold text-accent-crimson">1.650.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-red-900/50 text-accent-crimson border border-red-700/50">15/Nov/2026</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-red-900/50 text-accent-crimson border border-red-700/50">15/Nov/2026</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-amber">
                                 <td class="p-3 font-medium text-accent-amber">Comissão de Corretagem</td>
-                                <td class="p-3 text-slate-400">Corretor que intermediou a venda milionária da Fazenda Curralinho em 2024.</td>
+                                <td class="p-3 text-slate-400">Corretor que intermediou a venda milionária da Fazenda
+                                    Curralinho em 2024.</td>
                                 <td class="p-3 text-right font-bold text-slate-400">—</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Liberado (09/Mar)</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Liberado
+                                        (09/Mar)</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-2 border-slate-500">
                                 <td class="p-3 font-medium text-white">Escritura — 44ha (Antônio e Dirceu)</td>
-                                <td class="p-3 text-slate-400">Transferência formal dos 44ha vendidos em vida pelo falecido. R$ 172K retido em juízo já validado.</td>
+                                <td class="p-3 text-slate-400">Transferência formal dos 44ha vendidos em vida pelo
+                                    falecido. R$ 172K retido em juízo já validado.</td>
                                 <td class="p-3 text-right font-bold text-slate-400">172.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Liberado (09/Mar)</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Liberado
+                                        (09/Mar)</span></td>
                             </tr>
                             <tr class="border-t-2 border-slate-500 bg-navy-800">
-                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Obrigações Pendentes (Coopervap)</td>
+                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Obrigações
+                                    Pendentes (Coopervap)</td>
                                 <td class="p-3 text-right font-bold text-accent-crimson text-lg">4.400.000,00</td>
                                 <td class="p-3"></td>
                             </tr>
@@ -422,13 +595,22 @@
                 <div class="p-5 rounded-xl bg-accent-gold/10 border border-accent-gold/20">
                     <p class="text-sm text-slate-300">
                         <strong class="text-accent-gold block mb-2">Tramitação Processual — 1º Trimestre/2026:</strong>
-                        Em fevereiro, o inventariante protocolou petições pedindo "apreciação URGENTE" ao juiz para destravar os alvarás. Em 09/março, o juiz deferiu: (1) alvará para o inventariante assinar a escritura dos 44ha para Antônio e Dirceu; (2) alvará para pagar a comissão de corretagem da venda da fazenda. No dia 11/março, o Ministério Público emitiu seu parecer favorável, protegendo os interesses do herdeiro incapaz. Em 24/março, foi juntado o substabelecimento nomeando o Dr. Sinomar Francisco de Almeida como novo advogado no processo.
+                        Em fevereiro, o inventariante protocolou petições pedindo "apreciação URGENTE" ao juiz para
+                        destravar os alvarás. Em 09/março, o juiz deferiu: (1) alvará para o inventariante assinar a
+                        escritura dos 44ha para Antônio e Dirceu; (2) alvará para pagar a comissão de corretagem da
+                        venda da fazenda. No dia 11/março, o Ministério Público emitiu seu parecer favorável, protegendo
+                        os interesses do herdeiro incapaz. Em 24/março, foi juntado o substabelecimento nomeando o Dr.
+                        Sinomar Francisco de Almeida como novo advogado no processo.
                     </p>
                 </div>
                 <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700">
                     <p class="text-sm text-slate-300">
                         <strong class="text-white block mb-2">A Engenharia Financeira do Acordo Coopervap:</strong>
-                        Para honrar a 1ª parcela de R$ 2,75M até junho/2026, o espólio usará o saldo em juízo e caixa (R$ 1.398.105,35) mais o arrendamento previsto (R$ 752.689,67). A diferença exigirá um <strong class="text-accent-amber">sacrifício patrimonial extra</strong>: o inventariante assumiu o compromisso de vender os 50% do espólio em um apartamento e duas vagas de garagem no Guará/DF, usando exclusivamente o produto dessa venda para cobrir o acordo.
+                        Para honrar a 1ª parcela de R$ 2,75M até junho/2026, o espólio usará o saldo em juízo e caixa
+                        (R$ 1.398.105,35) mais o arrendamento previsto (R$ 752.689,67). A diferença exigirá um <strong
+                            class="text-accent-amber">sacrifício patrimonial extra</strong>: o inventariante assumiu o
+                        compromisso de vender os 50% do espólio em um apartamento e duas vagas de garagem no Guará/DF,
+                        usando exclusivamente o produto dessa venda para cobrir o acordo.
                     </p>
                 </div>
             </div>
@@ -439,11 +621,17 @@
             <div class="glass-card p-8 border border-red-500/20 bg-red-950/20">
                 <div class="flex items-start gap-4 mb-6">
                     <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-red-500/20 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-accent-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        <svg class="w-6 h-6 text-accent-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold font-display text-white">A Última Grande Cartada — Acordo Coopervap (Abril/2026)</h3>
-                        <p class="text-slate-400 text-sm mt-1">A minuta apresentada em abril de 2026 sela a paz definitiva entre o espólio e a cooperativa, que vinha cobrando R$ 5.336.548,16 desde setembro de 2023.</p>
+                        <h3 class="text-2xl font-bold font-display text-white">A Última Grande Cartada — Acordo
+                            Coopervap (Abril/2026)</h3>
+                        <p class="text-slate-400 text-sm mt-1">A minuta apresentada em abril de 2026 sela a paz
+                            definitiva entre o espólio e a cooperativa, que vinha cobrando R$ 5.336.548,16 desde
+                            setembro de 2023.</p>
                     </div>
                 </div>
 
@@ -472,7 +660,8 @@
                             <tr class="border-b border-slate-700 text-slate-400">
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Parcela</th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Vencimento</th>
-                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)</th>
+                                <th class="p-3 font-semibold uppercase tracking-wider text-xs text-right">Valor (R$)
+                                </th>
                                 <th class="p-3 font-semibold uppercase tracking-wider text-xs">Fonte dos Recursos</th>
                             </tr>
                         </thead>
@@ -481,13 +670,16 @@
                                 <td class="p-3 font-bold text-white">1ª Parcela</td>
                                 <td class="p-3 text-accent-crimson font-bold">30 de Junho de 2026</td>
                                 <td class="p-3 text-right font-bold text-white text-lg">2.750.000,00</td>
-                                <td class="p-3 text-slate-400 text-xs">Saldo judicial (R$ 770K) + caixa (R$ 628K) + arrendamento (R$ 752K) + <strong class="text-accent-amber">venda 50% apto. Guará/DF</strong></td>
+                                <td class="p-3 text-slate-400 text-xs">Saldo judicial (R$ 770K) + caixa (R$ 628K) +
+                                    arrendamento (R$ 752K) + <strong class="text-accent-amber">venda 50% apto.
+                                        Guará/DF</strong></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-amber">
                                 <td class="p-3 font-bold text-white">2ª e Última Parcela</td>
                                 <td class="p-3 text-accent-amber font-bold">15 de Novembro de 2026</td>
                                 <td class="p-3 text-right font-bold text-white text-lg">1.650.000,00</td>
-                                <td class="p-3 text-slate-400 text-xs">Última prestação da Fazenda Curralinho (out/2026) + saldo remanescente</td>
+                                <td class="p-3 text-slate-400 text-xs">Última prestação da Fazenda Curralinho (out/2026)
+                                    + saldo remanescente</td>
                             </tr>
                             <tr class="border-t-2 border-slate-500 bg-navy-800">
                                 <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total do Acordo</td>
@@ -501,7 +693,10 @@
                 <div class="p-4 rounded-xl bg-red-950/50 border border-red-700/40">
                     <p class="text-sm text-slate-300">
                         <strong class="text-accent-crimson block mb-1">⚠ Cláusula de Inadimplência:</strong>
-                        Se o espólio não pagar nas datas combinadas, o acordo é quebrado e a dívida volta a ser cobrada pelo valor de <strong class="text-white">R$ 5.070.961,16</strong> (cálculo da contadoria judicial), acrescido de correção monetária e juros de <strong class="text-white">1% ao mês</strong>. O acordo só tem validade após homologação judicial pelo juiz do inventário.
+                        Se o espólio não pagar nas datas combinadas, o acordo é quebrado e a dívida volta a ser cobrada
+                        pelo valor de <strong class="text-white">R$ 5.070.961,16</strong> (cálculo da contadoria
+                        judicial), acrescido de correção monetária e juros de <strong class="text-white">1% ao
+                            mês</strong>. O acordo só tem validade após homologação judicial pelo juiz do inventário.
                     </p>
                 </div>
             </div>
@@ -510,10 +705,14 @@
         <!-- O Retrospecto Histórico e a Conclusão Global -->
         <section id="action"
             class="shimmer rounded-[2rem] bg-gradient-to-br from-navy-800 via-navy-800 to-accent-amber/10 p-12 text-center border border-accent-gold/20">
-            <h3 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4">Perspectiva — Abril de 2026</h3>
+            <h3 class="text-sm font-bold text-accent-gold tracking-widest uppercase mb-4">Perspectiva — Abril de 2026
+            </h3>
             <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">A Última Grande Barreira</p>
             <p class="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed mb-8">
-                Em 6 anos, o espólio saiu de um rombo de quase R$ 10 milhões para ter perspectiva real de saldo positivo. A Regius perdoou mais de R$ 5,4 milhões. A Coopervap, que em setembro de 2023 cobrava R$ 5.336.548,16, aceitou uma última negociação em abril de 2026 por R$ 4.400.000,00 — a pedra no sapato que faltava tirar.
+                Em 6 anos, o espólio saiu de um rombo de quase R$ 10 milhões para ter perspectiva real de saldo
+                positivo. A Regius perdoou mais de R$ 5,4 milhões. A Coopervap, que em setembro de 2023 cobrava R$
+                5.336.548,16, aceitou uma última negociação em abril de 2026 por R$ 4.400.000,00 — a pedra no sapato que
+                faltava tirar.
             </p>
             <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto text-left mb-8">
                 <div class="p-5 rounded-xl bg-emerald-900/30 border border-emerald-700/30">
@@ -530,7 +729,10 @@
                 </div>
             </div>
             <p class="text-base text-white/60 max-w-3xl mx-auto leading-relaxed">
-                Com a aprovação e o pagamento integral dessa minuta, o espólio resolve o seu último grande obstáculo financeiro, abrindo caminho para que o processo finalmente termine com um saldo positivo a ser dividido entre os herdeiros — o resultado de uma gestão que, nas palavras do próprio processo, transformou um estado de falência numa saída honrada.
+                Com a aprovação e o pagamento integral dessa minuta, o espólio resolve o seu último grande obstáculo
+                financeiro, abrindo caminho para que o processo finalmente termine com um saldo positivo a ser dividido
+                entre os herdeiros — o resultado de uma gestão que, nas palavras do próprio processo, transformou um
+                estado de falência numa saída honrada.
             </p>
         </section>
 

@@ -104,7 +104,7 @@
                 left: 20px;
             }
         }
-    
+
         /* ===== OTIMIZAÇÃO PARA IMPRESSÃO / PDF ===== */
         @media print {
             @page {
@@ -112,12 +112,15 @@
                 margin: 1.5cm 1.2cm;
             }
 
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
                 animation: none !important;
                 transition: none !important;
             }
 
-            html, body {
+            html,
+            body {
                 background: #ffffff !important;
                 color: #1e293b !important;
             }
@@ -128,14 +131,30 @@
                 max-width: 100% !important;
             }
 
-            .space-y-24 > * + * { margin-top: 1.5rem !important; }
+            .space-y-24>*+* {
+                margin-top: 1.5rem !important;
+            }
 
-            nav { display: none !important; }
-            a[href*="Relatorio"] { display: none !important; }
+            nav {
+                display: none !important;
+            }
 
-            .absolute.inset-0 { display: none !important; }
-            .shimmer::after { display: none !important; }
-            .relative.z-10 { position: static !important; z-index: auto !important; }
+            a[href*="Relatorio"] {
+                display: none !important;
+            }
+
+            .absolute.inset-0 {
+                display: none !important;
+            }
+
+            .shimmer::after {
+                display: none !important;
+            }
+
+            .relative.z-10 {
+                position: static !important;
+                z-index: auto !important;
+            }
 
             section {
                 break-inside: avoid !important;
@@ -145,10 +164,18 @@
                 overflow: visible !important;
             }
 
-            section.relative { justify-content: flex-start !important; }
+            section.relative {
+                justify-content: flex-start !important;
+            }
 
-            [class*="min-h-"] { min-height: auto !important; }
-            [class*="max-h-"] { max-height: none !important; overflow: visible !important; }
+            [class*="min-h-"] {
+                min-height: auto !important;
+            }
+
+            [class*="max-h-"] {
+                max-height: none !important;
+                overflow: visible !important;
+            }
 
             .shimmer {
                 background: #f1f5f9 !important;
@@ -165,12 +192,24 @@
                 page-break-inside: avoid !important;
             }
 
-            h1, h2, h3, h4, p, span, td, th, li, strong {
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            span,
+            td,
+            th,
+            li,
+            strong {
                 color: #0f172a !important;
                 -webkit-text-fill-color: #0f172a !important;
             }
 
-            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h1 {
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
 
             .gradient-text {
                 background: none !important;
@@ -180,21 +219,33 @@
                 color: #0f172a !important;
             }
 
-            .text-white\/50, .text-white\/70, .text-white\/80 {
+            .text-white\/50,
+            .text-white\/70,
+            .text-white\/80 {
                 color: #64748b !important;
                 -webkit-text-fill-color: #64748b !important;
             }
 
-            .text-slate-400, .text-slate-500 {
+            .text-slate-400,
+            .text-slate-500 {
                 color: #64748b !important;
                 -webkit-text-fill-color: #64748b !important;
             }
 
-            .text-accent-emerald, .text-accent-crimson, .text-accent-amber,
-            .text-accent-indigo, .text-accent-blue, .text-accent-purple,
-            .text-accent-rust, .text-accent-teal, .text-accent-sky,
-            .text-accent-gold, .text-amber-500, .text-red-500,
-            .text-green-500, .text-purple-500 {
+            .text-accent-emerald,
+            .text-accent-crimson,
+            .text-accent-amber,
+            .text-accent-indigo,
+            .text-accent-blue,
+            .text-accent-purple,
+            .text-accent-rust,
+            .text-accent-teal,
+            .text-accent-sky,
+            .text-accent-gold,
+            .text-amber-500,
+            .text-red-500,
+            .text-green-500,
+            .text-purple-500 {
                 color: #0f172a !important;
                 -webkit-text-fill-color: #0f172a !important;
                 font-weight: 700 !important;
@@ -207,7 +258,11 @@
                 -webkit-text-fill-color: #1e293b !important;
             }
 
-            table { border-collapse: collapse !important; width: 100% !important; font-size: 9pt !important; }
+            table {
+                border-collapse: collapse !important;
+                width: 100% !important;
+                font-size: 9pt !important;
+            }
 
             th {
                 background: #e2e8f0 !important;
@@ -225,13 +280,28 @@
                 padding: 5px 8px !important;
             }
 
-            tr { border-bottom: 1px solid #cbd5e1 !important; }
-            tbody tr:nth-child(even) { background: #f8fafc !important; }
+            tr {
+                border-bottom: 1px solid #cbd5e1 !important;
+            }
 
-            .overflow-x-auto, .overflow-y-auto { overflow: visible !important; }
-            .sticky { position: static !important; }
+            tbody tr:nth-child(even) {
+                background: #f8fafc !important;
+            }
 
-            canvas { max-width: 200px !important; max-height: 200px !important; page-break-inside: avoid !important; }
+            .overflow-x-auto,
+            .overflow-y-auto {
+                overflow: visible !important;
+            }
+
+            .sticky {
+                position: static !important;
+            }
+
+            canvas {
+                max-width: 200px !important;
+                max-height: 200px !important;
+                page-break-inside: avoid !important;
+            }
 
             footer {
                 color: #64748b !important;
@@ -239,7 +309,53 @@
                 border-top: 1px solid #e2e8f0 !important;
             }
 
-            .no-print { display: none !important; }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE MOBILE FIRST ===== */
+        @media (max-width: 768px) {
+            /* Espaçamento principal */
+            main {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                padding-top: 1.5rem !important;
+            }
+            main > * + * { margin-top: 2rem !important; }
+
+            /* Navegação */
+            nav {
+                margin: 0.5rem 0.75rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+
+            /* Cards internos */
+            .glass-card { padding: 1rem !important; }
+
+            /* Hero — altura mínima reduzida */
+            section[class*="min-h-"] { min-height: 380px !important; }
+
+            /* Tipografia */
+            h1 { font-size: 1.875rem !important; line-height: 1.2 !important; }
+            h2 { font-size: 1.375rem !important; }
+            h3 { font-size: 1.125rem !important; }
+            .text-xl { font-size: 0.9375rem !important; line-height: 1.5 !important; }
+            .text-lg { font-size: 0.875rem !important; }
+            .text-4xl { font-size: 1.5rem !important; }
+            .text-5xl { font-size: 1.75rem !important; }
+
+            /* Seção de conclusão */
+            .shimmer { padding: 1.5rem 1rem !important; border-radius: 1.25rem !important; }
+
+            /* Tabelas */
+            td, th { padding: 0.375rem 0.5rem !important; font-size: 0.75rem !important; }
+
+            /* Pills */
+            .status-pill { font-size: 0.625rem !important; padding: 2px 8px !important; }
+
+            /* Barra de ações — wrap no mobile */
+            .no-print { padding: 0.5rem 0.75rem !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
         }
     </style>
 </head>
@@ -247,18 +363,30 @@
 <body class="antialiased">
 
     <!-- Barra de ações — oculta na impressão -->
-    <div class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
-        <a href="index.html" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    <div
+        class="no-print flex items-center justify-between px-6 py-3 bg-navy-800 border-b border-white/5 text-xs sticky top-0 z-[100]">
+        <a href="index.html"
+            class="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
             Portal de Relatórios
         </a>
         <div class="flex gap-2">
-            <a href="pdfs/2023_Comprovantes.pdf" download class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-rust/20 hover:bg-accent-rust/30 text-accent-rust border border-accent-rust/30 rounded-lg transition font-semibold">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <a href="pdfs/2023_Comprovantes.pdf" download
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-accent-rust/20 hover:bg-accent-rust/30 text-accent-rust border border-accent-rust/30 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
                 Baixar Comprovantes PDF
             </a>
-            <button onclick="window.print()" class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <button onclick="window.print()"
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 rounded-lg transition font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
                 Imprimir / Salvar PDF
             </button>
         </div>
@@ -273,8 +401,8 @@
                     </path>
                 </svg>
             </div>
-            <span class="font-display font-bold text-xl tracking-tight">STRATEGIC<span
-                    class="text-accent-rust">CASH</span></span>
+            <span class="font-display font-bold text-xl tracking-tight">Joaquim<span
+                    class="text-accent-rust">Rocha</span></span>
         </div>
         <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <a href="#summary" class="hover:text-white transition-colors">Fluxo do Ano</a>
@@ -306,24 +434,33 @@
                         Prestação de Contas <br>Inventário
                         <span class="block text-3xl md:text-4xl mt-4 text-white/50">Exercício 2023</span>
                     </h1>
-                    <p class="text-slate-300 text-lg max-w-md">O ano em que a fonte secou. Não houve entrada de dinheiro novo ou venda de grandes propriedades. A família jogou apenas com o saldo acumulado nos anos anteriores — enquanto a Coopervap disparou execução de R$ 5,3M, a Regius chegou a R$ 12,4M e o juiz abriu a porteira das habilitações de credores em outubro de 2023.</p>
+                    <p class="text-slate-300 text-lg max-w-md">O ano em que a fonte secou. Não houve entrada de dinheiro
+                        novo ou venda de grandes propriedades. A família jogou apenas com o saldo acumulado nos anos
+                        anteriores — enquanto a Coopervap disparou execução de R$ 5,3M, a Regius chegou a R$ 12,4M e o
+                        juiz abriu a porteira das habilitações de credores em outubro de 2023.</p>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Entradas (Arrendamento e Rendimentos)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Entradas (Arrendamento e
+                            Rendimentos)</p>
                         <p class="text-3xl font-bold font-display text-accent-emerald">+ R$ 376.116,85</p>
                         <p class="text-slate-500 text-xs mt-1">Sem vendas novas — apenas arrendamento contínuo</p>
                     </div>
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Saídas (Pagamento Juscredi + Custos)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Saídas (Pagamento Juscredi +
+                            Custos)</p>
                         <p class="text-3xl font-bold font-display text-accent-crimson">- R$ 1.076.306,01</p>
-                        <p class="text-slate-500 text-xs mt-1">Inclui quitação das dívidas cedidas pelo BB à Juscredi</p>
+                        <p class="text-slate-500 text-xs mt-1">Inclui quitação das dívidas cedidas pelo BB à Juscredi
+                        </p>
                     </div>
-                    <div class="glass-card p-6 border-white/10 col-span-2 text-center bg-accent-rust/10 border-accent-rust/30">
-                        <p class="text-accent-rust text-xs font-semibold uppercase mb-1">Saldo em Conta Judicial — Posição de Início de 2024</p>
+                    <div
+                        class="glass-card p-6 border-white/10 col-span-2 text-center bg-accent-rust/10 border-accent-rust/30">
+                        <p class="text-accent-rust text-xs font-semibold uppercase mb-1">Saldo em Conta Judicial —
+                            Posição de Início de 2024</p>
                         <p class="text-4xl font-bold font-display text-white">R$ 690.400,49</p>
-                        <p class="text-slate-400 text-xs mt-1">Todo o "dinheiro vivo" disponível para negociar uma montanha de dívidas</p>
+                        <p class="text-slate-400 text-xs mt-1">Todo o "dinheiro vivo" disponível para negociar uma
+                            montanha de dívidas</p>
                     </div>
                 </div>
             </div>
@@ -438,13 +575,19 @@
                 <div class="mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
                     <p class="text-sm text-slate-300">
                         <strong class="text-white block mb-2">Gestão com Saldo Acumulado:</strong>
-                        Sem vendas novas, a família usou o saldo acumulado dos anos anteriores mais o arrendamento corrente para liquidar a Juscredi (R$ 950K) e cobrir custos operacionais. O resultado foi o enxugamento do caixa para R$ 690.400,49 — exatamente o valor que, a partir de 2024, serviria de base para negociar a saída das grandes dívidas.
+                        Sem vendas novas, a família usou o saldo acumulado dos anos anteriores mais o arrendamento
+                        corrente para liquidar a Juscredi (R$ 950K) e cobrir custos operacionais. O resultado foi o
+                        enxugamento do caixa para R$ 690.400,49 — exatamente o valor que, a partir de 2024, serviria de
+                        base para negociar a saída das grandes dívidas.
                     </p>
                 </div>
                 <div class="mt-4 p-4 rounded-xl bg-red-950/30 border border-red-700/30">
                     <p class="text-sm text-slate-300">
                         <strong class="text-accent-crimson block mb-2">Marco Processual — Outubro/2023:</strong>
-                        O juiz deu a "canetada" mais importante do ano: deferiu oficialmente a <strong class="text-white">habilitação</strong> da Coopervap, Sólida Agronegócios, Adelina Rocha e outros na fila de credores do inventário. A partir desse momento, qualquer liberação de recurso passaria pelo crivo de todos eles simultaneamente.
+                        O juiz deu a "canetada" mais importante do ano: deferiu oficialmente a <strong
+                            class="text-white">habilitação</strong> da Coopervap, Sólida Agronegócios, Adelina Rocha e
+                        outros na fila de credores do inventário. A partir desse momento, qualquer liberação de recurso
+                        passaria pelo crivo de todos eles simultaneamente.
                     </p>
                 </div>
             </div>
@@ -543,7 +686,11 @@
                             </div>
                             <h4 class="font-bold text-lg">Sucessão do Banco do Brasil</h4>
                         </div>
-                        <p class="text-slate-400 text-sm mb-4">Em outubro de 2023, o juiz indeferiu o pedido de habilitação direta do Banco do Brasil por erro procedimental. Contudo, parte dessas dívidas bancárias haviam sido cedidas a uma empresa chamada Juscredi Securitizadora — e o espólio pagou R$ 950.000,00 para liquidar essa obrigação, com o encerramento formal da ação ocorrendo em maio de 2024.</p>
+                        <p class="text-slate-400 text-sm mb-4">Em outubro de 2023, o juiz indeferiu o pedido de
+                            habilitação direta do Banco do Brasil por erro procedimental. Contudo, parte dessas dívidas
+                            bancárias haviam sido cedidas a uma empresa chamada Juscredi Securitizadora — e o espólio
+                            pagou R$ 950.000,00 para liquidar essa obrigação, com o encerramento formal da ação
+                            ocorrendo em maio de 2024.</p>
                     </div>
                 </div>
             </div>
@@ -556,7 +703,13 @@
             <p class="text-4xl md:text-5xl font-display font-bold text-white mb-6">A Falência e a Amputação do
                 Patrimônio</p>
             <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                Trocando em miúdos: a tática de tentar pagar dívidas milionárias com o pouco dinheiro pingando de arrendamentos não iria funcionar. Com a Coopervap cobrando <strong>R$ 5.336.548,16</strong> e a Regius caminhando para <strong>R$ 12,4 milhões</strong>, ficou claro que o espólio estava em estado de falência. O juiz abriu a porteira das habilitações em outubro. A única saída que se desenhava no final de 2023 era a mais dolorosa para qualquer herdeiro: <strong>amputar o patrimônio</strong> — preparar a venda da joia da coroa (a Fazenda Curralinho) para entregar o dinheiro diretamente aos credores e tentar salvar o que sobrasse.
+                Trocando em miúdos: a tática de tentar pagar dívidas milionárias com o pouco dinheiro pingando de
+                arrendamentos não iria funcionar. Com a Coopervap cobrando <strong>R$ 5.336.548,16</strong> e a Regius
+                caminhando para <strong>R$ 12,4 milhões</strong>, ficou claro que o espólio estava em estado de
+                falência. O juiz abriu a porteira das habilitações em outubro. A única saída que se desenhava no final
+                de 2023 era a mais dolorosa para qualquer herdeiro: <strong>amputar o patrimônio</strong> — preparar a
+                venda da joia da coroa (a Fazenda Curralinho) para entregar o dinheiro diretamente aos credores e tentar
+                salvar o que sobrasse.
             </p>
         </section>
 

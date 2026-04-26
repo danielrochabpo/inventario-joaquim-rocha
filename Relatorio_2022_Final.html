@@ -316,6 +316,50 @@
                 display: none !important;
             }
         }
+
+        /* ===== RESPONSIVIDADE MOBILE FIRST ===== */
+        @media (max-width: 768px) {
+            /* Espaçamento principal */
+            main {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                padding-top: 1.5rem !important;
+            }
+            main > * + * { margin-top: 2rem !important; }
+
+            /* Navegação */
+            nav {
+                margin: 0.5rem 0.75rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+
+            /* Cards internos */
+            .glass-card { padding: 1rem !important; }
+
+            /* Hero — altura mínima reduzida */
+            section[class*="min-h-"] { min-height: 380px !important; }
+
+            /* Tipografia */
+            h1 { font-size: 1.875rem !important; line-height: 1.2 !important; }
+            h2 { font-size: 1.375rem !important; }
+            h3 { font-size: 1.125rem !important; }
+            .text-xl { font-size: 0.9375rem !important; line-height: 1.5 !important; }
+            .text-lg { font-size: 0.875rem !important; }
+            .text-4xl { font-size: 1.5rem !important; }
+            .text-5xl { font-size: 1.75rem !important; }
+
+            /* Seção de conclusão */
+            .shimmer { padding: 1.5rem 1rem !important; border-radius: 1.25rem !important; }
+
+            /* Tabelas */
+            td, th { padding: 0.375rem 0.5rem !important; font-size: 0.75rem !important; }
+
+            /* Pills */
+            .status-pill { font-size: 0.625rem !important; padding: 2px 8px !important; }
+
+            /* Barra de ações — wrap no mobile */
+            .no-print { padding: 0.5rem 0.75rem !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
+        }
     </style>
 </head>
 
@@ -360,8 +404,8 @@
                     </path>
                 </svg>
             </div>
-            <span class="font-display font-bold text-xl tracking-tight">STRATEGIC<span
-                    class="text-accent-purple">CASH</span></span>
+            <span class="font-display font-bold text-xl tracking-tight">Joaquim<span
+                    class="text-accent-purple">Rocha</span></span>
         </div>
         <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <a href="#vision" class="hover:text-white transition-colors">Fluxo Financeiro</a>
@@ -393,24 +437,32 @@
                         Prestação de Contas <br>Inventário
                         <span class="block text-3xl md:text-4xl mt-4 text-white/50">Exercício 2022</span>
                     </h1>
-                    <p class="text-slate-300 text-lg max-w-md">O ano em que o inventário "bateu no teto". Os R$ 172.000 da venda de 44ha (Antônio e Dirceu) e R$ 14.718 do imóvel de Taguatinga entraram em juízo — e imediatamente a Regius denunciou fraude à execução, bloqueando todo e qualquer alvará em maio de 2022. Nenhum centavo saiu para os herdeiros.</p>
+                    <p class="text-slate-300 text-lg max-w-md">O ano em que o inventário "bateu no teto". Os R$ 172.000
+                        da venda de 44ha (Antônio e Dirceu) e R$ 14.718 do imóvel de Taguatinga entraram em juízo — e
+                        imediatamente a Regius denunciou fraude à execução, bloqueando todo e qualquer alvará em maio de
+                        2022. Nenhum centavo saiu para os herdeiros.</p>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Vendas Concretizadas (Depósitos em Juízo)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Vendas Concretizadas (Depósitos
+                            em Juízo)</p>
                         <p class="text-3xl font-bold font-display text-accent-emerald">R$ 186.718,10</p>
                         <p class="text-slate-500 text-xs mt-1">44ha Fazenda + Cota Taguatinga</p>
                     </div>
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Saídas Operacionais (Custos Reais)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Saídas Operacionais (Custos
+                            Reais)</p>
                         <p class="text-3xl font-bold font-display text-accent-crimson">- R$ 46.436,50</p>
                         <p class="text-slate-500 text-xs mt-1">Fiscal, ambiental, adm. e bancário</p>
                     </div>
-                    <div class="glass-card p-6 border-white/10 col-span-2 text-center bg-red-950/30 border border-red-700/30">
-                        <p class="text-accent-crimson text-xs font-semibold uppercase mb-1">Saldo Retido em Juízo — Nenhum Pagamento a Credores Realizado</p>
+                    <div
+                        class="glass-card p-6 border-white/10 col-span-2 text-center bg-red-950/30 border border-red-700/30">
+                        <p class="text-accent-crimson text-xs font-semibold uppercase mb-1">Saldo Retido em Juízo —
+                            Nenhum Pagamento a Credores Realizado</p>
                         <p class="text-3xl font-bold font-display text-white">Processo suspenso — Out a Nov/2022</p>
-                        <p class="text-slate-400 text-xs mt-2">Inventariante declarou ao juiz que o prazo de suspensão servia exclusivamente para buscar conciliações com os credores</p>
+                        <p class="text-slate-400 text-xs mt-2">Inventariante declarou ao juiz que o prazo de suspensão
+                            servia exclusivamente para buscar conciliações com os credores</p>
                     </div>
                 </div>
             </div>
@@ -427,7 +479,8 @@
                     </div>
                 </div>
 
-                <h4 class="text-sm font-bold text-accent-emerald tracking-widest uppercase mb-4 mt-6">Entradas — Depósitos Judiciais e Receitas de 2022</h4>
+                <h4 class="text-sm font-bold text-accent-emerald tracking-widest uppercase mb-4 mt-6">Entradas —
+                    Depósitos Judiciais e Receitas de 2022</h4>
                 <div class="overflow-x-auto text-sm mb-8">
                     <table class="w-full text-left border-collapse">
                         <thead>
@@ -441,27 +494,39 @@
                         <tbody class="divide-y divide-slate-800">
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-emerald">
                                 <td class="p-3 font-medium text-white">Fazenda Curralinho — 44ha</td>
-                                <td class="p-3 text-slate-400">Depósito judicial de Antônio e Dirceu (cota-parte de 50% do falecido). Fevereiro/2022.</td>
+                                <td class="p-3 text-slate-400">Depósito judicial de Antônio e Dirceu (cota-parte de 50%
+                                    do falecido). Fevereiro/2022.</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">172.000,00</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Retido em Juízo</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Retido
+                                        em Juízo</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-emerald">
                                 <td class="p-3 font-medium text-white">Imóvel Taguatinga/DF (QNG 09)</td>
-                                <td class="p-3 text-slate-400">Cota de 2,777% da casa na QNG 09. Depósito judicial em 09/06/2022.</td>
+                                <td class="p-3 text-slate-400">Cota de 2,777% da casa na QNG 09. Depósito judicial em
+                                    09/06/2022.</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">14.718,10</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Retido em Juízo</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Retido
+                                        em Juízo</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Arrendamento Rural</td>
-                                <td class="p-3 text-slate-400">Marco Antonio Senju — Veredas I e Cab. Pinho. Contrato vigente desde 2020.</td>
+                                <td class="p-3 text-slate-400">Marco Antonio Senju — Veredas I e Cab. Pinho. Contrato
+                                    vigente desde 2020.</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">830.409,30</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-slate-700 text-slate-400 border border-slate-600">Bloqueado</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-slate-700 text-slate-400 border border-slate-600">Bloqueado</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
                                 <td class="p-3 font-medium text-white">Rendimentos Financeiros</td>
-                                <td class="p-3 text-slate-400">Aplicações financeiras sobre saldo da conta judicial vinculada.</td>
+                                <td class="p-3 text-slate-400">Aplicações financeiras sobre saldo da conta judicial
+                                    vinculada.</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">52.709,04</td>
-                                <td class="p-3 text-right"><span class="status-pill bg-slate-700 text-slate-400 border border-slate-600">Bloqueado</span></td>
+                                <td class="p-3 text-right"><span
+                                        class="status-pill bg-slate-700 text-slate-400 border border-slate-600">Bloqueado</span>
+                                </td>
                             </tr>
                             <tr class="border-t-2 border-slate-600 bg-navy-800">
                                 <td class="p-3 font-bold uppercase text-xs" colspan="2">Total Creditado no Ano</td>
@@ -561,9 +626,15 @@
                             </div>
                             <h4 class="font-bold text-lg">A Intervenção Regius</h4>
                         </div>
-                        <p class="text-slate-400 text-sm mb-4">Dona da dívida mais pesada, a Regius desmembrou sua execução em Brasília (processo nº 0719050-30.2022.8.07.0001) para focar especificamente no espólio do Sr. Joaquim. Quando o juiz de Paracatu estava prestes a liberar o alvará para concluir a venda da Fazenda Curralinho, a Regius atravessou uma petição denunciando possível "fraude à execução".</p>
+                        <p class="text-slate-400 text-sm mb-4">Dona da dívida mais pesada, a Regius desmembrou sua
+                            execução em Brasília (processo nº 0719050-30.2022.8.07.0001) para focar especificamente no
+                            espólio do Sr. Joaquim. Quando o juiz de Paracatu estava prestes a liberar o alvará para
+                            concluir a venda da Fazenda Curralinho, a Regius atravessou uma petição denunciando possível
+                            "fraude à execução".</p>
                         <div class="bg-navy-800/80 p-3 rounded-lg border border-white/5">
-                            <p class="text-sm text-accent-crimson font-bold">Resultado: Juiz de Paracatu suspendeu imediatamente a expedição do alvará em maio de 2022 — travando a regularização da fazenda e qualquer liberação de recursos.</p>
+                            <p class="text-sm text-accent-crimson font-bold">Resultado: Juiz de Paracatu suspendeu
+                                imediatamente a expedição do alvará em maio de 2022 — travando a regularização da
+                                fazenda e qualquer liberação de recursos.</p>
                         </div>
                     </div>
                 </div>
@@ -581,10 +652,17 @@
                             </div>
                             <h4 class="font-bold text-lg">Concorrência de Terceiros</h4>
                         </div>
-                        <p class="text-slate-400 text-sm mb-4">Com os depósitos judiciais e o arrendamento acumulando saldo em conta, outros credores se movimentaram formalmente para garantir que não ficariam de fora do rateio dos bens.</p>
+                        <p class="text-slate-400 text-sm mb-4">Com os depósitos judiciais e o arrendamento acumulando
+                            saldo em conta, outros credores se movimentaram formalmente para garantir que não ficariam
+                            de fora do rateio dos bens.</p>
                         <div class="bg-navy-800/80 p-3 rounded-lg border border-white/5 space-y-2">
-                            <p class="text-sm text-white"><span class="font-bold">Setembro 2022:</span> Sólida Agronegócios Ltda. pediu e teve seu cadastro deferido como terceira interessada no processo, firmando posição na fila de preferência.</p>
-                            <p class="text-sm text-slate-400 mt-2"><span class="font-bold text-white">Outubro 2022:</span> O inventariante declarou ao juiz que o prazo de suspensão processual se estenderia até 23/novembro/2022, período usado exclusivamente para tentativas de conciliação com os credores em Brasília e Paracatu.</p>
+                            <p class="text-sm text-white"><span class="font-bold">Setembro 2022:</span> Sólida
+                                Agronegócios Ltda. pediu e teve seu cadastro deferido como terceira interessada no
+                                processo, firmando posição na fila de preferência.</p>
+                            <p class="text-sm text-slate-400 mt-2"><span class="font-bold text-white">Outubro
+                                    2022:</span> O inventariante declarou ao juiz que o prazo de suspensão processual se
+                                estenderia até 23/novembro/2022, período usado exclusivamente para tentativas de
+                                conciliação com os credores em Brasília e Paracatu.</p>
                         </div>
                     </div>
                 </div>
