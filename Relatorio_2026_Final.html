@@ -318,13 +318,17 @@
 
         /* ===== RESPONSIVIDADE MOBILE FIRST ===== */
         @media (max-width: 768px) {
+
             /* Espaçamento principal */
             main {
                 padding-left: 0.75rem !important;
                 padding-right: 0.75rem !important;
                 padding-top: 1.5rem !important;
             }
-            main > * + * { margin-top: 2rem !important; }
+
+            main>*+* {
+                margin-top: 2rem !important;
+            }
 
             /* Navegação */
             nav {
@@ -333,31 +337,71 @@
             }
 
             /* Cards internos */
-            .glass-card { padding: 1rem !important; }
+            .glass-card {
+                padding: 1rem !important;
+            }
 
             /* Hero — altura mínima reduzida */
-            section[class*="min-h-"] { min-height: 380px !important; }
+            section[class*="min-h-"] {
+                min-height: 380px !important;
+            }
 
             /* Tipografia */
-            h1 { font-size: 1.875rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.375rem !important; }
-            h3 { font-size: 1.125rem !important; }
-            .text-xl { font-size: 0.9375rem !important; line-height: 1.5 !important; }
-            .text-lg { font-size: 0.875rem !important; }
-            .text-4xl { font-size: 1.5rem !important; }
-            .text-5xl { font-size: 1.75rem !important; }
+            h1 {
+                font-size: 1.875rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.375rem !important;
+            }
+
+            h3 {
+                font-size: 1.125rem !important;
+            }
+
+            .text-xl {
+                font-size: 0.9375rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .text-lg {
+                font-size: 0.875rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-5xl {
+                font-size: 1.75rem !important;
+            }
 
             /* Seção de conclusão */
-            .shimmer { padding: 1.5rem 1rem !important; border-radius: 1.25rem !important; }
+            .shimmer {
+                padding: 1.5rem 1rem !important;
+                border-radius: 1.25rem !important;
+            }
 
             /* Tabelas */
-            td, th { padding: 0.375rem 0.5rem !important; font-size: 0.75rem !important; }
+            td,
+            th {
+                padding: 0.375rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
 
             /* Pills */
-            .status-pill { font-size: 0.625rem !important; padding: 2px 8px !important; }
+            .status-pill {
+                font-size: 0.625rem !important;
+                padding: 2px 8px !important;
+            }
 
             /* Barra de ações — wrap no mobile */
-            .no-print { padding: 0.5rem 0.75rem !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
+            .no-print {
+                padding: 0.5rem 0.75rem !important;
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
+            }
         }
     </style>
 </head>
@@ -449,7 +493,8 @@
                         <p class="text-2xl font-bold font-display text-accent-gold">R$ 1.398.105,35</p>
                     </div>
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">A Receber (Arrend. + Parcela + Apto.)</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">A Receber (Arrend. + Parcela +
+                            Apto.)</p>
                         <p class="text-2xl font-bold font-display text-accent-amber">+ R$ 2.502.689,67</p>
                     </div>
                     <div
@@ -511,10 +556,12 @@
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-emerald">
                                 <td class="p-3 font-medium text-white">Sítio Veredas I — 1ª Parcela</td>
-                                <td class="p-3 text-slate-400">1ª parcela da venda ao Sr. Eduardo Henrique Borin, recebida em 23/Out/2025 via TED.</td>
+                                <td class="p-3 text-slate-400">1ª parcela da venda ao Sr. Eduardo Henrique Borin,
+                                    recebida em 23/Out/2025 via TED.</td>
                                 <td class="p-3 text-right font-bold text-accent-emerald">1.000.000,00</td>
                                 <td class="p-3 text-right"><span
-                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Recebido (Out/2025)</span>
+                                        class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Recebido
+                                        (Out/2025)</span>
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition">
@@ -528,10 +575,13 @@
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-amber">
                                 <td class="p-3 font-medium text-white">Venda 50% Apartamento Guará/DF</td>
-                                <td class="p-3 text-slate-400">Venda da cota de 50% do espólio em apartamento e duas vagas de garagem no Guará, Brasília/DF. Recurso destinado a cobrir a 1ª parcela Coopervap (jun/2026).</td>
+                                <td class="p-3 text-slate-400">Venda da cota de 50% do espólio em apartamento e duas
+                                    vagas de garagem no Guará, Brasília/DF. Recurso destinado a cobrir a 1ª parcela
+                                    Coopervap (jun/2026).</td>
                                 <td class="p-3 text-right font-bold text-accent-amber">750.000,00</td>
                                 <td class="p-3 text-right"><span
-                                        class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">Previsto 2026</span>
+                                        class="status-pill bg-amber-900/50 text-accent-amber border border-amber-700/50">Previsto
+                                        2026</span>
                                 </td>
                             </tr>
                             <tr class="border-t-2 border-slate-500 bg-navy-800">
@@ -578,14 +628,17 @@
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-amber">
                                 <td class="p-3 font-medium text-accent-amber">Comissão de Corretagem</td>
-                                <td class="p-3 text-slate-400">Comissão dos corretores pela intermediação da venda do Sítio Veredas I (1ª parcela recebida em Out/2025). Alvará deferido em 09/Mar/2026.</td>
+                                <td class="p-3 text-slate-400">Comissão dos corretores pela intermediação da venda do
+                                    Sítio Veredas I (1ª parcela recebida em Out/2025). Alvará deferido em 09/Mar/2026.
+                                </td>
                                 <td class="p-3 text-right font-bold text-accent-amber">360.000,00</td>
                                 <td class="p-3 text-right"><span
                                         class="status-pill bg-emerald-900/50 text-accent-emerald border border-emerald-700/50">Liberado
                                         (09/Mar)</span></td>
                             </tr>
                             <tr class="border-t-2 border-slate-500 bg-navy-800">
-                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Obrigações Pendentes (Coopervap + Comissão)</td>
+                                <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total de Obrigações
+                                    Pendentes (Coopervap + Comissão)</td>
                                 <td class="p-3 text-right font-bold text-accent-crimson text-lg">4.760.000,00</td>
                                 <td class="p-3"></td>
                             </tr>
@@ -610,7 +663,13 @@
                 <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700">
                     <p class="text-sm text-slate-300">
                         <strong class="text-white block mb-2">A Engenharia Financeira do Acordo Coopervap:</strong>
-                        Para honrar a 1ª parcela de R$ 2,75M até junho/2026, o espólio conta com: saldo em juízo e caixa (R$ 1.398.105,35) + 1ª parcela da fazenda já recebida (R$ 1.000.000,00) + arrendamento previsto (R$ 752.689,67) + <strong class="text-accent-amber">venda 50% Apartamento Guará/DF (R$ 750.000,00)</strong> = <strong class="text-white">R$ 3.900.795,02</strong> disponíveis. Após pagar a comissão de corretagem (R$ 360.000,00), o saldo líquido de R$ 3.540.795,02 cobre a 1ª parcela Coopervap (R$ 2,75M), deixando reserva para a 2ª parcela (R$ 1,65M em Nov/2026) que será coberta pela última prestação da fazenda (out/2026).
+                        Para honrar a 1ª parcela de R$ 2,75M até junho/2026, o espólio conta com: saldo em juízo e caixa
+                        (R$ 1.398.105,35) + 1ª parcela da fazenda já recebida (R$ 1.000.000,00) + arrendamento previsto
+                        (R$ 752.689,67) + <strong class="text-accent-amber">venda 50% Apartamento Guará/DF (R$
+                            750.000,00)</strong> = <strong class="text-white">R$ 3.900.795,02</strong> disponíveis. Após
+                        pagar a comissão de corretagem (R$ 360.000,00), o saldo líquido de R$ 3.540.795,02 cobre a 1ª
+                        parcela Coopervap (R$ 2,75M), deixando reserva para a 2ª parcela (R$ 1,65M em Nov/2026) que será
+                        coberta pela última prestação da fazenda (out/2026).
                     </p>
                 </div>
             </div>
@@ -670,7 +729,9 @@
                                 <td class="p-3 font-bold text-white">1ª Parcela</td>
                                 <td class="p-3 text-accent-crimson font-bold">30 de Junho de 2026</td>
                                 <td class="p-3 text-right font-bold text-white text-lg">2.750.000,00</td>
-                                <td class="p-3 text-slate-400 text-xs">Saldo judicial (R$ 770K) + caixa (R$ 628K) + arrendamento (R$ 752K) + <strong class="text-accent-amber">venda 50% apto. Guará/DF (R$ 750K)</strong></td>
+                                <td class="p-3 text-slate-400 text-xs">Saldo judicial (R$ 770K) + caixa (R$ 628K) +
+                                    arrendamento (R$ 752K) + <strong class="text-accent-amber">venda 50% apto. Guará/DF
+                                        (R$ 750K)</strong></td>
                             </tr>
                             <tr class="hover:bg-slate-800/50 transition border-l-4 border-accent-amber">
                                 <td class="p-3 font-bold text-white">2ª e Última Parcela</td>

@@ -321,13 +321,17 @@
 
         /* ===== RESPONSIVIDADE MOBILE FIRST ===== */
         @media (max-width: 768px) {
+
             /* Espaçamento principal */
             main {
                 padding-left: 0.75rem !important;
                 padding-right: 0.75rem !important;
                 padding-top: 1.5rem !important;
             }
-            main > * + * { margin-top: 2rem !important; }
+
+            main>*+* {
+                margin-top: 2rem !important;
+            }
 
             /* Navegação */
             nav {
@@ -336,31 +340,71 @@
             }
 
             /* Cards internos */
-            .glass-card { padding: 1rem !important; }
+            .glass-card {
+                padding: 1rem !important;
+            }
 
             /* Hero — altura mínima reduzida */
-            section[class*="min-h-"] { min-height: 380px !important; }
+            section[class*="min-h-"] {
+                min-height: 380px !important;
+            }
 
             /* Tipografia */
-            h1 { font-size: 1.875rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.375rem !important; }
-            h3 { font-size: 1.125rem !important; }
-            .text-xl { font-size: 0.9375rem !important; line-height: 1.5 !important; }
-            .text-lg { font-size: 0.875rem !important; }
-            .text-4xl { font-size: 1.5rem !important; }
-            .text-5xl { font-size: 1.75rem !important; }
+            h1 {
+                font-size: 1.875rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.375rem !important;
+            }
+
+            h3 {
+                font-size: 1.125rem !important;
+            }
+
+            .text-xl {
+                font-size: 0.9375rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .text-lg {
+                font-size: 0.875rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-5xl {
+                font-size: 1.75rem !important;
+            }
 
             /* Seção de conclusão */
-            .shimmer { padding: 1.5rem 1rem !important; border-radius: 1.25rem !important; }
+            .shimmer {
+                padding: 1.5rem 1rem !important;
+                border-radius: 1.25rem !important;
+            }
 
             /* Tabelas */
-            td, th { padding: 0.375rem 0.5rem !important; font-size: 0.75rem !important; }
+            td,
+            th {
+                padding: 0.375rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
 
             /* Pills */
-            .status-pill { font-size: 0.625rem !important; padding: 2px 8px !important; }
+            .status-pill {
+                font-size: 0.625rem !important;
+                padding: 2px 8px !important;
+            }
 
             /* Barra de ações — wrap no mobile */
-            .no-print { padding: 0.5rem 0.75rem !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
+            .no-print {
+                padding: 0.5rem 0.75rem !important;
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
+            }
         }
     </style>
 </head>
@@ -452,9 +496,11 @@
                         <p class="text-slate-500 text-xs mt-1">R$ 1M − R$ 360.000,00 (comissão corretores)</p>
                     </div>
                     <div class="glass-card p-6 border-white/10">
-                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Credores Menores — Comprometido</p>
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Credores Menores — Comprometido
+                        </p>
                         <p class="text-3xl font-bold font-display text-accent-purple">- R$ 542.322,40</p>
-                        <p class="text-slate-500 text-xs mt-1">IRPF em parcelas mensais · Adelina e Mantovani aguardam alvará</p>
+                        <p class="text-slate-500 text-xs mt-1">IRPF em parcelas mensais · Adelina e Mantovani aguardam
+                            alvará</p>
                     </div>
                     <div
                         class="glass-card p-6 border-white/10 col-span-2 text-center bg-amber-950/30 border border-amber-700/30">
@@ -500,7 +546,8 @@
                                 </tr>
                                 <tr class="hover:bg-slate-800/50 transition">
                                     <td class="p-3 font-medium text-accent-crimson">- Comissão de Corretores</td>
-                                    <td class="p-3 text-slate-400">Comissão pela intermediação da venda do Sítio Veredas I ao Sr. Eduardo Henrique Borin (alvará autorizado em 09/Mar/2026)</td>
+                                    <td class="p-3 text-slate-400">Comissão pela intermediação da venda do Sítio Veredas
+                                        I ao Sr. Eduardo Henrique Borin (alvará autorizado em 09/Mar/2026)</td>
                                     <td class="p-3 text-right font-bold text-accent-crimson">- 360.000,00</td>
                                 </tr>
                                 <tr class="hover:bg-slate-800/50 transition border-l-2 border-slate-600">
@@ -536,21 +583,28 @@
                             <tbody class="divide-y divide-slate-800">
                                 <tr class="hover:bg-slate-800/50 transition border-l-2 border-accent-purple">
                                     <td class="p-3 font-medium text-accent-purple">Receita Federal (IRPF 2023)</td>
-                                    <td class="p-3 text-slate-400">Parcelamento mensal ativo — débito total de R$ 283.268,96 referente ao IRPF 2023, sendo quitado em cotas mensais ao longo de 2025 e 2026.</td>
+                                    <td class="p-3 text-slate-400">Parcelamento mensal ativo — débito total de R$
+                                        283.268,96 referente ao IRPF 2023, sendo quitado em cotas mensais ao longo de
+                                        2025 e 2026.</td>
                                     <td class="p-3 text-right font-bold">283.268,96</td>
                                 </tr>
                                 <tr class="hover:bg-slate-800/50 transition border-l-2 border-amber-600/50">
                                     <td class="p-3 font-medium text-accent-amber">Adelina Rocha de Almeida</td>
-                                    <td class="p-3 text-slate-400">Débito reconhecido pelo espólio (R$ 137.000,00) — pagamento pendente de autorização judicial. Alvará ainda não deferido pelo juiz.</td>
+                                    <td class="p-3 text-slate-400">Débito reconhecido pelo espólio (R$ 137.000,00) —
+                                        pagamento pendente de autorização judicial. Alvará ainda não deferido pelo juiz.
+                                    </td>
                                     <td class="p-3 text-right font-bold">137.000,00</td>
                                 </tr>
                                 <tr class="hover:bg-slate-800/50 transition border-l-2 border-amber-600/50">
                                     <td class="p-3 font-medium text-accent-amber">André Mantovani</td>
-                                    <td class="p-3 text-slate-400">Crédito reconhecido pelo espólio (R$ 122.053,44) — pagamento pendente de autorização judicial. Alvará ainda não deferido pelo juiz.</td>
+                                    <td class="p-3 text-slate-400">Crédito reconhecido pelo espólio (R$ 122.053,44) —
+                                        pagamento pendente de autorização judicial. Alvará ainda não deferido pelo juiz.
+                                    </td>
                                     <td class="p-3 text-right font-bold">122.053,44</td>
                                 </tr>
                                 <tr class="border-t-2 border-slate-600 bg-navy-800">
-                                    <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total Comprometido — Credores Menores</td>
+                                    <td class="p-3 font-bold text-white uppercase text-xs" colspan="2">Total
+                                        Comprometido — Credores Menores</td>
                                     <td class="p-3 text-right font-bold text-accent-purple text-lg">542.322,40</td>
                                 </tr>
                             </tbody>
@@ -601,7 +655,11 @@
                 2026</p>
             <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
                 Aquele mesmo espólio que em 2021 amargava <strong>quase R$ 10 milhões negativos</strong> com tribunais
-                no cangote conseguiu, em outubro de 2025, ver cair R$ 640.000,00 líquidos na conta do espólio (R$ 1M bruto, deduzida a comissão de corretores de R$ 360.000,00). O IRPF 2023 (R$ 283.268,96) está sendo quitado em parcelamento mensal; Adelina (R$ 137.000,00) e André Mantovani (R$ 122.053,44) têm seus créditos reconhecidos pelo espólio, mas aguardam autorização judicial — os alvarás ainda não foram deferidos pelo juiz.
+                no cangote conseguiu, em outubro de 2025, ver cair R$ 640.000,00 líquidos na conta do espólio (R$ 1M
+                bruto, deduzida a comissão de corretores de R$ 360.000,00). O IRPF 2023 (R$ 283.268,96) está sendo
+                quitado em parcelamento mensal; Adelina (R$ 137.000,00) e André Mantovani (R$ 122.053,44) têm seus
+                créditos reconhecidos pelo espólio, mas aguardam autorização judicial — os alvarás ainda não foram
+                deferidos pelo juiz.
                 <br><br>
                 A tempestade grande passou, mas o horizonte de 2026 ainda guarda uma pedra no sapato: a
                 <strong>Coopervap</strong>, cujo acordo de 2024 não foi honrado, seguia "encaminhada" ao encerrar 2025 e
