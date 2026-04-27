@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestação de Contas - Espólio Joaquim Rocha | 2020–2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -23,24 +25,30 @@
         }
     </script>
     <style>
-        body { background-color: #0B1120; color: #E2E8F0; overflow-x: hidden; }
+        body {
+            background-color: #0B1120;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
 
         .glass-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.18);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.18);
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .year-card { cursor: pointer; }
+        .year-card {
+            cursor: pointer;
+        }
 
         .gradient-text {
             background: linear-gradient(135deg, #FFF 0%, #94A3B8 100%);
@@ -59,7 +67,8 @@
 
         .badge-dot {
             display: inline-block;
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             margin-right: 5px;
         }
@@ -78,31 +87,65 @@
         .timeline-connector {
             position: absolute;
             left: 50%;
-            top: 0; bottom: 0;
+            top: 0;
+            bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.06), transparent);
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.06), transparent);
         }
 
         .shimmer-bg {
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
         }
 
         @keyframes fade-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .animate-fade-up { animation: fade-up 0.6s ease both; }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-600 { animation-delay: 0.6s; }
-        .delay-700 { animation-delay: 0.7s; }
+        .animate-fade-up {
+            animation: fade-up 0.6s ease both;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-700 {
+            animation-delay: 0.7s;
+        }
 
         @media print {
-            body { background: #fff !important; color: #1e293b !important; }
+            body {
+                background: #fff !important;
+                color: #1e293b !important;
+            }
         }
     </style>
 </head>
@@ -120,14 +163,16 @@
     <header class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center animate-fade-up">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6">
             <span class="badge-dot bg-emerald-400"></span>
-            <span class="text-slate-400 text-xs font-semibold uppercase tracking-widest">Portal de Transparência Financeira</span>
+            <span class="text-slate-400 text-xs font-semibold uppercase tracking-widest">Portal de Transparência
+                Financeira</span>
         </div>
 
         <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight gradient-text mb-4">
             Espólio Joaquim Rocha
         </h1>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Prestação de contas consolidada do inventário judicial. Acompanhe o histórico financeiro de cada exercício — de 2020 ao encerramento em 2026.
+            Prestação de contas consolidada do inventário judicial. Acompanhe o histórico financeiro de cada exercício —
+            de 2020 ao encerramento em 2026.
         </p>
 
         <div class="flex flex-wrap justify-center gap-3 mt-8">
@@ -149,181 +194,266 @@
     <!-- Grade de Relatórios por Ano -->
     <main class="max-w-6xl mx-auto px-6 pb-20">
 
-        <h2 class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-8 text-center animate-fade-up delay-100">
+        <h2
+            class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-8 text-center animate-fade-up delay-100">
             Selecione o Exercício
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- 2020 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-red-500 animate-fade-up delay-100 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-red-500 animate-fade-up delay-100 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2020</span>
-                        <span class="status-pill bg-red-500/15 text-red-400 border border-red-500/20">Déficit Crítico</span>
+                        <span class="status-pill bg-red-500/15 text-red-400 border border-red-500/20">Déficit
+                            Crítico</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Ano de abertura. Herança insolvente com passivos superiores a <strong class="text-white">R$ 13,5M</strong> e apenas despesas operacionais de manutenção.</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Ano de abertura. Herança insolvente com
+                        passivos superiores a <strong class="text-white">R$ 13,5M</strong> e apenas despesas
+                        operacionais de manutenção.</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Saídas: <strong class="text-red-400">R$ 14.553</strong></span>
                         <span>Entradas: <strong class="text-slate-400">–</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2020_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2020_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2020_Comprovantes.pdf" download class="btn-primary bg-red-500/15 hover:bg-red-500/25 text-red-400 border border-red-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2020_Comprovantes.pdf" download
+                        class="btn-primary bg-red-500/15 hover:bg-red-500/25 text-red-400 border border-red-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2021 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-blue-500 animate-fade-up delay-200 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-blue-500 animate-fade-up delay-200 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2021</span>
-                        <span class="status-pill bg-blue-500/15 text-blue-400 border border-blue-500/20">Liquidez Inicial</span>
+                        <span class="status-pill bg-blue-500/15 text-blue-400 border border-blue-500/20">Liquidez
+                            Inicial</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Primeira entrada operacional significativa via arrendamento. Capital imediatamente absorvido pelo saneamento do passivo fiscal.</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Primeira entrada operacional significativa
+                        via arrendamento. Capital imediatamente absorvido pelo saneamento do passivo fiscal.</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Entradas: <strong class="text-emerald-400">R$ 85.632</strong></span>
                         <span>Saldo: <strong class="text-blue-400">+R$ 30.333</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2021_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2021_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2021_Comprovantes.pdf" download class="btn-primary bg-blue-500/15 hover:bg-blue-500/25 text-blue-400 border border-blue-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2021_Comprovantes.pdf" download
+                        class="btn-primary bg-blue-500/15 hover:bg-blue-500/25 text-blue-400 border border-blue-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2022 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-purple-500 animate-fade-up delay-300 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-purple-500 animate-fade-up delay-300 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2022</span>
-                        <span class="status-pill bg-purple-500/15 text-purple-400 border border-purple-500/20">Paralisia Judicial</span>
+                        <span class="status-pill bg-purple-500/15 text-purple-400 border border-purple-500/20">Paralisia
+                            Judicial</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Maior geração de receita do processo (<strong class="text-white">+R$ 1,06M</strong>), porém toda bloqueada pelos credores antes de ser liberada.</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Maior geração de receita do processo (<strong
+                            class="text-white">+R$ 1,06M</strong>), porém toda bloqueada pelos credores antes de ser
+                        liberada.</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Entradas: <strong class="text-emerald-400">R$ 1,06M</strong></span>
                         <span>Bloqueado: <strong class="text-purple-400">~R$ 1,02M</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2022_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2022_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2022_Comprovantes.pdf" download class="btn-primary bg-purple-500/15 hover:bg-purple-500/25 text-purple-400 border border-purple-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2022_Comprovantes.pdf" download
+                        class="btn-primary bg-purple-500/15 hover:bg-purple-500/25 text-purple-400 border border-purple-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2023 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-orange-500 animate-fade-up delay-400 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-orange-500 animate-fade-up delay-400 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2023</span>
-                        <span class="status-pill bg-orange-500/15 text-orange-400 border border-orange-500/20">Insolvência Decl.</span>
+                        <span
+                            class="status-pill bg-orange-500/15 text-orange-400 border border-orange-500/20">Insolvência
+                            Decl.</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Juiz oficializa habilitação dos credores. Liquidação da Juscredi (<strong class="text-white">R$ 950K</strong>) e passivos da Coopervap explodem a R$ 5,3M.</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">Juiz oficializa habilitação dos credores.
+                        Liquidação da Juscredi (<strong class="text-white">R$ 950K</strong>) e passivos da Coopervap
+                        explodem a R$ 5,3M.</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Entradas: <strong class="text-emerald-400">R$ 376K</strong></span>
                         <span>Saídas: <strong class="text-red-400">R$ 1,076M</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2023_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2023_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2023_Comprovantes.pdf" download class="btn-primary bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 border border-orange-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2023_Comprovantes.pdf" download
+                        class="btn-primary bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 border border-orange-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2024 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-emerald-500 animate-fade-up delay-500 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-emerald-500 animate-fade-up delay-500 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2024</span>
-                        <span class="status-pill bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">Virada · Solvência</span>
+                        <span class="status-pill bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">Virada
+                            · Solvência</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">A "cartada final". Venda da Fazenda Curralinho por <strong class="text-white">R$ 9M</strong>. Quitação de Regius (12,4M→7M) e Coopervap (5,3M→2,1M).</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">A "cartada final". Venda da Fazenda
+                        Curralinho por <strong class="text-white">R$ 9M</strong>. Quitação de Regius (12,4M→7M) e
+                        Coopervap (5,3M→2,1M).</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Injeção: <strong class="text-emerald-400">R$ 9M</strong></span>
                         <span>Dívida quitada: <strong class="text-teal-400">R$ 17,7M</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2024_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2024_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2024_Comprovantes.pdf" download class="btn-primary bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2024_Comprovantes.pdf" download
+                        class="btn-primary bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2025 -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-sky-500 animate-fade-up delay-600 flex flex-col justify-between">
+            <div
+                class="glass-card year-card p-7 border-t-4 border-t-sky-500 animate-fade-up delay-600 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="font-display text-5xl font-bold text-white/20">2025</span>
-                        <span class="status-pill bg-sky-500/15 text-sky-400 border border-sky-500/20">Paz Financeira</span>
+                        <span class="status-pill bg-sky-500/15 text-sky-400 border border-sky-500/20">Paz
+                            Financeira</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">1ª parcela milionária recebida. Credores menores quitados (Receita Federal, Adelina, André Mantovani). Encerramento do arrendamento.</p>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">1ª parcela recebida. Credores menores
+                        quitados (Receita Federal, Adelina, André Mantovani). Encerramento do arrendamento.</p>
                     <div class="flex justify-between text-xs text-slate-500 border-t border-white/5 pt-4 mb-6">
                         <span>Entrada: <strong class="text-sky-400">R$ 813K</strong></span>
                         <span>Pagos: <strong class="text-purple-400">R$ 542K</strong></span>
                     </div>
                 </div>
                 <div class="flex gap-2 flex-wrap">
-                    <a href="Relatorio_2025_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <a href="Relatorio_2025_Final.html"
+                        class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
                         Ver Relatório
                     </a>
-                    <a href="pdfs/2025_Comprovantes.pdf" download class="btn-primary bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 border border-sky-500/20 flex-1 justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <a href="pdfs/2025_Comprovantes.pdf" download
+                        class="btn-primary bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 border border-sky-500/20 flex-1 justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
                         Comprovantes PDF
                     </a>
                 </div>
             </div>
 
             <!-- 2026 - Card em destaque (encerramento) -->
-            <div class="glass-card year-card p-7 border-t-4 border-t-yellow-400 md:col-span-2 lg:col-span-3 animate-fade-up delay-700" style="background: rgba(251,191,36,0.04);">
+            <div class="glass-card year-card p-7 border-t-4 border-t-yellow-400 md:col-span-2 lg:col-span-3 animate-fade-up delay-700"
+                style="background: rgba(251,191,36,0.04);">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div class="flex-1">
                         <div class="flex items-center gap-4 mb-3">
                             <span class="font-display text-5xl font-bold text-yellow-400/30">2026</span>
-                            <span class="status-pill bg-yellow-400/15 text-yellow-400 border border-yellow-400/20">Encerramento & Partilha</span>
+                            <span
+                                class="status-pill bg-yellow-400/15 text-yellow-400 border border-yellow-400/20">Encerramento
+                                & Partilha</span>
                         </div>
                         <p class="text-slate-400 text-sm leading-relaxed max-w-2xl">
-                            O capítulo final. Alvarás liberados em março. Aguarda a última parcela de <strong class="text-yellow-400">R$ 1.000.000,00</strong> (Out/2026) para a partilha definitiva entre os herdeiros. <em class="text-slate-500">Da falência à solvência em 6 anos.</em>
+                            O capítulo final. Alvarás liberados em março. Aguarda a última parcela de <strong
+                                class="text-yellow-400">R$ 1.000.000,00</strong> (Out/2026) para a partilha definitiva
+                            entre os herdeiros. <em class="text-slate-500">Da falência à solvência em 6 anos.</em>
                         </p>
                     </div>
                     <div class="flex gap-3 flex-wrap md:flex-nowrap">
-                        <a href="Relatorio_2026_Final.html" class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 whitespace-nowrap">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <a href="Relatorio_2026_Final.html"
+                            class="btn-primary bg-white/8 hover:bg-white/12 text-white border border-white/10 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
                             Ver Relatório 2026
                         </a>
-                        <a href="pdfs/2026_Comprovantes.pdf" download class="btn-primary bg-yellow-400/15 hover:bg-yellow-400/25 text-yellow-400 border border-yellow-400/20 whitespace-nowrap">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <a href="pdfs/2026_Comprovantes.pdf" download
+                            class="btn-primary bg-yellow-400/15 hover:bg-yellow-400/25 text-yellow-400 border border-yellow-400/20 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
                             Comprovantes PDF
                         </a>
                     </div>
@@ -335,7 +465,10 @@
         <!-- Nota sobre PDFs -->
         <div class="mt-10 p-5 rounded-2xl bg-white/3 border border-white/8 text-center animate-fade-up delay-700">
             <p class="text-slate-500 text-sm">
-                <svg class="w-4 h-4 inline mr-1 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg class="w-4 h-4 inline mr-1 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 Os relatórios HTML também podem ser salvos como PDF diretamente pelo navegador:
                 <strong class="text-slate-400">Ctrl+P → Salvar como PDF</strong>.
                 Para imprimir em papel, recomendamos orientação retrato, margens padrão.
@@ -351,4 +484,5 @@
     </footer>
 
 </body>
+
 </html>
