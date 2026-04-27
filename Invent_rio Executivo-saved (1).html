@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Executivo de Inventário | Fluxo de Caixa Estratégico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0A192F',
+                            800: '#112240',
+                            700: '#1B2A4E',
+                        },
+                        accent: {
+                            emerald: '#10B981',
+                            crimson: '#EF4444',
+                            amber: '#F59E0B',
+                            indigo: '#6366F1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A192F;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #1E293B, transparent);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 px-6 py-4 flex justify-between items-center glass-card mx-6 mt-4 rounded-2xl">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-accent-indigo rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+            </div>
+            <span class="font-display font-bold text-xl tracking-tight">STRATEGIC<span
+                    class="text-accent-indigo">CASH</span></span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <a href="#summary" class="hover:text-white transition-colors">Resumo</a>
+            <a href="#vision" class="hover:text-white transition-colors">Visão</a>
+            <a href="#diagnosis" class="hover:text-white transition-colors">Diagnóstico</a>
+            <a href="#action" class="hover:text-white transition-colors">Plano de Ação</a>
+        </div>
+        <div class="status-pill bg-accent-amber/20 text-accent-amber border border-accent-amber/30">
+            Relatório: Q3 2024
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+
+        <section class="relative rounded-[2.5rem] overflow-hidden min-h-[600px] flex flex-col justify-end p-8 md:p-16">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/60 to-transparent"></div>
+
+            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-end">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-accent-crimson/20 border border-accent-crimson/30 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-accent-crimson animate-pulse"></span>
+                        <span class="text-accent-crimson text-xs font-bold uppercase tracking-widest">Risco Financeiro:
+                            Alta Prioridade</span>
+                    </div>
+                    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight gradient-text">
+                        Relatório de <br>Fluxo de Caixa
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-md">Análise consolidada de ativos do Espólio, passivos e
+                        projeções de liquidez plurianuais (2020-2026).</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Patrimônio Total</p>
+                        <p class="text-2xl font-bold font-display">R$ 142.4M</p>
+                    </div>
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">Liquidez Atual</p>
+                        <p class="text-2xl font-bold font-display text-accent-emerald">R$ 62.8M</p>
+                    </div>
+                    <div class="glass-card p-6 border-white/10">
+                        <p class="text-slate-400 text-xs font-semibold uppercase mb-1">OpEx Mensal</p>
+                        <p class="text-2xl font-bold font-display text-accent-crimson">R$ 480K</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-sm font-bold text-accent-indigo tracking-widest uppercase mb-2">Resumo Executivo
+                    </h2>
+                    <p class="text-4xl font-display font-bold">Pivô Estratégico e Veredito</p>
+                </div>
+                <div class="flex gap-2">
+                    <div class="status-pill bg-slate-800 text-slate-300">Status: Estável</div>
+                    <div class="status-pill bg-accent-crimson/20 text-accent-crimson">Prioridade: Alta</div>
+                    <div class="status-pill bg-accent-emerald/20 text-accent-emerald">Eficiência: 78%</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 border-l-4 border-l-accent-crimson">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-accent-crimson">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                            </path>
+                        </svg>
+                        Definição do Problema
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        O espólio enfrenta um "Ponto de Atrito" significativo em seu fluxo de caixa devido a passivos
+                        fiscais concentrados (REFIS) e acordos bancários históricos (Santander). Embora a liquidez
+                        esteja crescendo, 40% das saídas mensais estão presas em dívidas fiscais não produtivas,
+                        limitando o potencial de investimento nos ciclos de colheita de 2026.
+                    </p>
+                </div>
+                <div class="glass-card p-8 border-l-4 border-l-accent-emerald">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-accent-emerald">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Solução Estratégica
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Transição do modo de "Liquidação Passiva" para uma estratégia de "Liquidação Ativa de Dívidas".
+                        Ao utilizar a alta liquidez atual para acionar cláusulas de desconto em acordos fiscais e
+                        bancários, projetamos uma redução de 15% no custo total da dívida, liberando R$ 330K/mês no
+                        fluxo de caixa operacional líquido em 12 meses.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 glass-card p-8">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold font-display">Evolução da Liquidez</h3>
+                        <p class="text-slate-400 text-sm">Tendência Histórica 2020 — 2026 (Projetado)</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-3xl font-bold text-accent-emerald">+R$ 61.4M</p>
+                        <p class="text-xs text-slate-500 font-medium">CRESCIMENTO TOTAL</p>
+                    </div>
+                </div>
+                <div class="h-[300px] w-full">
+                    <canvas id="evolutionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold font-display mb-2">Composição de Custos</h3>
+                    <p class="text-slate-400 text-sm mb-6">Alocação de Desembolsos</p>
+                    <div class="h-[220px] mb-6">
+                        <canvas id="costDoughnut"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-400">Fiscal/REFIS</span>
+                        <span class="text-white font-bold">42%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1 rounded-full">
+                        <div class="bg-accent-crimson h-1 rounded-full" style="width: 42%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-400">Acordos Bancários</span>
+                        <span class="text-white font-bold">28%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1 rounded-full">
+                        <div class="bg-accent-amber h-1 rounded-full" style="width: 28%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-card p-6 text-center">
+                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Fôlego Operacional</p>
+                <p class="text-3xl font-bold font-display">36 Meses</p>
+                <p class="text-accent-emerald text-[10px] mt-1 font-bold">↑ +4% VS ÚLTIMO TRI</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Recuperação de Juros</p>
+                <p class="text-3xl font-bold font-display">12.4%</p>
+                <p class="text-slate-500 text-[10px] mt-1 font-bold">META: 10%</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Conformidade Fiscal</p>
+                <p class="text-3xl font-bold font-display">94%</p>
+                <p class="text-accent-emerald text-[10px] mt-1 font-bold">EXCELENTE</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Dívida vs Ativo</p>
+                <p class="text-3xl font-bold font-display">18.2%</p>
+                <p class="text-accent-emerald text-[10px] mt-1 font-bold">↓ -2.1% DESALAVANCAGEM</p>
+            </div>
+        </section>
+
+        <section id="diagnosis" class="space-y-10">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-sm font-bold text-accent-crimson tracking-widest uppercase mb-2">Diagnóstico Financeiro
+                </h2>
+                <h3 class="text-4xl font-display font-bold">Pontos Críticos de Atrito</h3>
+                <p class="text-slate-400 mt-4">Atenção imediata necessária para estes eventos fiscais de alto impacto.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-card p-6 flex items-center justify-between border-l-4 border-accent-crimson">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-accent-crimson/20 flex items-center justify-center text-accent-crimson">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Reestruturação Santander</h4>
+                            <p class="text-slate-400 text-sm">Pagamentos mensais excedem as taxas de mercado em 4,2%.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-accent-crimson font-bold">- R$ 1.2M</span>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase">IMPACTO ANUAL</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 flex items-center justify-between border-l-4 border-accent-amber">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-accent-amber/20 flex items-center justify-center text-accent-amber">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Conformidade ITR Set 2026</h4>
+                            <p class="text-slate-400 text-sm">Reavaliação de ativos rurais pode gerar aumento de
+                                impostos.</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-accent-amber font-bold">AVISO</span>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase">RISCO FUTURO</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 flex items-center justify-between border-l-4 border-accent-indigo">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-accent-indigo/20 flex items-center justify-center text-accent-indigo">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Honorários Jurídicos (Êxito)</h4>
+                            <p class="text-slate-400 text-sm">Taxas baseadas em sucesso programadas para pagamento no Q1
+                                2025.</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-white font-bold">R$ 850K</span>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase">PROVISIONADO</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card overflow-hidden bg-navy-800">
+            <div class="grid md:grid-cols-2">
+                <div class="p-12 space-y-6">
+                    <h3 class="text-sm font-bold text-accent-emerald tracking-widest uppercase">Simulação de Cenários
+                    </h3>
+                    <h4 class="text-4xl font-display font-bold">Liquidação Acelerada REFIS</h4>
+                    <p class="text-slate-400">Comparando o caminho atual com uma negociação otimizada de 15% de desconto
+                        para 2025.</p>
+
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-center justify-between p-4 bg-navy-900 rounded-xl">
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase">Saldo Atual</p>
+                                <p class="text-xl font-bold">R$ 2.2M</p>
+                            </div>
+                            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                            <div class="text-right">
+                                <p class="text-xs font-bold text-accent-emerald uppercase">Caminho Otimizado</p>
+                                <p class="text-xl font-bold text-accent-emerald">R$ 1.87M</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-navy-900 rounded-xl">
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase">Quitação Total</p>
+                                <p class="text-xl font-bold">Dez 2028</p>
+                            </div>
+                            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                            <div class="text-right">
+                                <p class="text-xs font-bold text-accent-emerald uppercase">Horizonte Projetado</p>
+                                <p class="text-xl font-bold text-accent-emerald">Julho 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-navy-900/50 p-12 flex flex-col items-center justify-center text-center">
+                    <div
+                        class="w-48 h-48 rounded-full border-8 border-accent-emerald/20 flex items-center justify-center mb-6 relative">
+                        <div class="absolute inset-0 rounded-full border-t-8 border-accent-emerald animate-spin"
+                            style="animation-duration: 3s;"></div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-400 uppercase">Economia</p>
+                            <p class="text-4xl font-bold text-white">R$ 330k</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 max-w-xs mx-auto">Ao acelerar a liquidação do REFIS, desbloqueamos liquidez
+                        imediata para investimento na safra.</p>
+                    <button
+                        class="mt-8 px-8 py-3 bg-accent-emerald text-navy-900 font-bold rounded-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all">Executar
+                        Cenário</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="action" class="space-y-12">
+            <div class="text-center">
+                <h2 class="text-sm font-bold text-accent-indigo tracking-widest uppercase mb-2">Roteiro para Liquidez
+                </h2>
+                <h3 class="text-4xl font-display font-bold">Plano de Ação Estratégico</h3>
+            </div>
+
+            <div class="relative timeline-line">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="relative z-10 space-y-6">
+                        <div
+                            class="w-12 h-12 bg-accent-indigo rounded-2xl flex items-center justify-center font-bold text-white mx-auto md:mx-0 shadow-lg shadow-accent-indigo/30">
+                            01</div>
+                        <div class="glass-card p-6 text-center md:text-left">
+                            <span class="status-pill bg-accent-indigo/20 text-accent-indigo mb-4 inline-block">Curto
+                                Prazo</span>
+                            <h4 class="text-xl font-bold mb-2">Certificação de Ativos</h4>
+                            <p class="text-slate-400 text-sm">Finalizar Georreferenciamento e CAR para estabilizar a
+                                avaliação de terras para auditorias fiscais futuras.</p>
+                        </div>
+                    </div>
+                    <div class="relative z-10 space-y-6">
+                        <div
+                            class="w-12 h-12 bg-white text-navy-900 rounded-2xl flex items-center justify-center font-bold mx-auto md:mx-0 shadow-lg">
+                            02</div>
+                        <div class="glass-card p-6 text-center md:text-left">
+                            <span class="status-pill bg-white/10 text-white mb-4 inline-block">Médio Prazo</span>
+                            <h4 class="text-xl font-bold mb-2">Reestruturação de Dívida</h4>
+                            <p class="text-slate-400 text-sm">Formalizar o novo acordo Santander. Acionar a liquidação
+                                do REFIS usando dividendos do Q4 para capturar 15% de desconto.</p>
+                        </div>
+                    </div>
+                    <div class="relative z-10 space-y-6">
+                        <div
+                            class="w-12 h-12 bg-slate-800 text-slate-400 rounded-2xl flex items-center justify-center font-bold mx-auto md:mx-0">
+                            03</div>
+                        <div class="glass-card p-6 text-center md:text-left">
+                            <span class="status-pill bg-slate-800 text-slate-500 mb-4 inline-block">Longo Prazo</span>
+                            <h4 class="text-xl font-bold mb-2">Rendimento Safra 2026</h4>
+                            <p class="text-slate-400 text-sm">Capitalizar sobre o balanço limpo para garantir crédito
+                                agrícola de baixo juros para o ciclo de expansão de 2026.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shimmer rounded-[2rem] bg-gradient-to-br from-accent-indigo to-indigo-900 p-12 text-center">
+            <h3 class="text-sm font-bold text-white/70 tracking-widest uppercase mb-4">Valor Total Desbloqueado</h3>
+            <p class="text-6xl md:text-8xl font-display font-bold text-white mb-6">R$ 4.250.000</p>
+            <p class="text-xl text-white/80 max-w-xl mx-auto">Economia projetada em 5 anos através da conformidade
+                fiscal otimizada e negociação bancária ativa.</p>
+        </section>
+
+    </main>
+
+    <script>
+        // Configuração dos Gráficos
+        const ctxEvolution = document.getElementById('evolutionChart').getContext('2d');
+        const ctxCost = document.getElementById('costDoughnut').getContext('2d');
+
+        // Gráfico de Evolução Linear
+        new Chart(ctxEvolution, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024 (E)', '2025 (P)', '2026 (P)'],
+                datasets: [{
+                    label: 'Liquidez (Milhões)',
+                    data: [1.4, 8.2, 15.6, 28.4, 42.1, 54.8, 62.8],
+                    borderColor: '#10B981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#10B981',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#64748b' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748b' }
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Pizza (Custos)
+        new Chart(ctxCost, {
+            type: 'doughnut',
+            data: {
+                labels: ['Fiscal', 'Bancário', 'Jurídico', 'Manutenção'],
+                datasets: [{
+                    data: [42, 28, 18, 12],
+                    backgroundColor: ['#EF4444', '#F59E0B', '#6366F1', '#1E293B'],
+                    borderWidth: 0,
+                    hoverOffset: 20
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

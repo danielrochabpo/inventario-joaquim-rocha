@@ -1,0 +1,31 @@
+date,month,year,observation,document,description,category,credit,debit,id,created_date,updated_date,created_by_id,created_by,is_sample
+"2020-08-06","8","2020","1. Cessão de Uso de Jazigo Valor: R$ 2.139,41 (Este é o valor referente ao contrato particular de cessão de uso do jazigo (Quadra 0811-2, Setor C, Lote 0144)
+
+2. Título de Perpetuidade Externo Valor: R$ 1.416,89 (Valor cobrado pela emissão do título de perpetuidade do lote, garantindo os direitos sobre o jazigo cumpridas as formalidades legais)
+
+3. Taxa de Manutenção e Conservação Valor: R$ 662,62 (Referente ao contrato de prestação de serviços de manutenção e conservação do jazigo e das áreas comuns do cemitério. Este é um valor de periodicidade anual)
+
+4. Serviços de Sepultamento e Acessórios Valor R$ 541,06  (Detalhes do que compõe este valor
+:
+Placa de identificação de jazigos: R$ 336,62
+Prestação de serviço de sepultamento (corpo): R$ 183,28
+Castiçal: R$ 21,15
+Plaqueta de identificação do sepultado (consta como doação/valor simbólico): R$ 0,01)
+
+Valor Total Desembolsado: Somando todos os contratos e notas fiscais detalhados nos documentos (R2.139,41+R 1.416,89 + R662,62+R 541,06), o valor total pago por todos os serviços e taxas foi de R$ 4.759,98.","Nº TP - 009929","Cessão e Manutenção de Jazigo ","Despesa Administrativa","0","4759.98","69e50342ccff2dcee0b9807a","2026-04-19T16:30:58.643000","2026-04-19T16:30:58.643000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-12-01","12","2020","","Ajuste","Ajuste","Ajuste de caixa","0","0.01","6942e9855be321723d566dea","2025-12-17T17:33:57.466000","2025-12-17T17:34:07.888000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-12-01","12","2020","","Ajuste","Ajuste","Ajuste de caixa","0.01","0","6942e97d1dc94bab1131a3fd","2025-12-17T17:33:49.776000","2025-12-17T17:34:13.638000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-11-01","11","2020","","Ajuste","Ajuste","Ajuste de caixa","0.01","0","6942e94d5be321723d566ddd","2025-12-17T17:33:01.959000","2025-12-17T17:33:14.164000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-11-01","11","2020","","Ajuste","Ajuste","Ajuste de caixa","0","0.01","6942e94986bf6f424e9e4728","2025-12-17T17:32:57.156000","2025-12-17T17:33:19.821000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-09-01","9","2020","","Ajuste","Ajuste","Ajuste de caixa","0","0.01","6942e8f852dd119417fe647a","2025-12-17T17:31:36.646000","2025-12-17T17:32:10.848000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-09-01","9","2020","","Ajuste","Ajuste","Ajuste de caixa","0.01","0","6942e8ae627803b8bd43e90b","2025-12-17T17:30:22.741000","2025-12-17T17:32:18.059000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-10-02","10","2020","","","Despesas cartoriais - Reg. Imóveis Paracatu","Cartório","0","898.24","69417d905ee76aaebf76e97b","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002316","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","994.43","69417d905ee76aaebf76e97c","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002318","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","994.43","69417d905ee76aaebf76e980","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-10-10","10","2020","Débitos que estavam em atraso com a contabilidade de Joaquim Rocha","","Batuta Contabilidade ","Honorários Contáebis","0","1000","69417d905ee76aaebf76e97a","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002312","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","979.3","69417d905ee76aaebf76e982","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002315","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","979.3","69417d905ee76aaebf76e97d","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002317","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","994.43","69417d905ee76aaebf76e983","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002314","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","979.3","69417d905ee76aaebf76e97e","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002319","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","994.43","69417d905ee76aaebf76e97f","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
+"2020-08-14","8","2020","","10100106866002313","ITR - IMPOSTO PROPRIEDADE TERRITORIAL RURAL","Fiscal","0","979.3","69417d905ee76aaebf76e981","2025-12-16T15:41:04.423000","2025-12-16T15:41:04.423000","69417695680e47ec76a426b8","sentinellabpo@gmail.com","false"
